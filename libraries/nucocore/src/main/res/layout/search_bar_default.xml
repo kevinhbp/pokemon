@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-  <FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <androidx.cardview.widget.CardView
-      android:layout_width="match_parent"
-      android:layout_height="@dimen/search_bar_height"
-      android:layout_marginHorizontal="@dimen/space_x5"
-      android:layout_marginVertical="@dimen/space_x2"
-      app:cardBackgroundColor="@color/nuco_white"
-      app:cardCornerRadius="@dimen/search_bar_height"
-      app:cardElevation="@dimen/elevation_small">
-
-      <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <FrameLayout
-          android:layout_width="@dimen/search_bar_height"
-          android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/search_bar_height"
+            android:layout_marginHorizontal="@dimen/space_x5"
+            android:layout_marginVertical="@dimen/space_x2"
+            app:cardBackgroundColor="@color/nuco_white"
+            app:cardCornerRadius="@dimen/search_bar_height"
+            app:cardElevation="@dimen/elevation_small">
 
-          <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/image_search_icon"
-            android:layout_width="@dimen/icon_large"
-            android:layout_height="@dimen/icon_large"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_search" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        </FrameLayout>
+                <FrameLayout
+                    android:layout_width="@dimen/search_bar_height"
+                    android:layout_height="match_parent">
 
-        <EditText
-          android:id="@+id/input_keyword"
-          style="@style/EditText"
-          android:layout_width="0dp"
-          android:layout_height="match_parent"
-          android:layout_weight="1"
-          android:autofillHints="name"
-          android:hint="@string/search"
-          android:imeOptions="actionSearch"
-          android:inputType="text"
-          tools:text="Kutu Daun" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image_search_icon"
+                        android:layout_width="@dimen/icon_large"
+                        android:layout_height="@dimen/icon_large"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_search" />
 
-        <FrameLayout
-          android:id="@+id/button_clear"
-          android:layout_width="@dimen/button_size_moderate"
-          android:layout_height="match_parent"
-          android:layout_marginEnd="@dimen/space_x2"
-          android:clickable="true"
-          android:focusable="true"
-          android:visibility="gone"
-          tools:visibility="visible">
+                </FrameLayout>
 
-          <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/icon_moderate"
-            android:layout_height="@dimen/icon_moderate"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/unify_clear_ic" />
+                <EditText
+                    android:id="@+id/input_keyword"
+                    style="@style/EditText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autofillHints="name"
+                    android:hint="@string/search"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    tools:text="Kutu Daun" />
 
-        </FrameLayout>
+                <FrameLayout
+                    android:id="@+id/button_clear"
+                    android:layout_width="@dimen/button_size_moderate"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/space_x2"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
-      </LinearLayout>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/icon_moderate"
+                        android:layout_height="@dimen/icon_moderate"
+                        android:layout_gravity="center"
+                        android:tint="@color/nuco_gray_3"
+                        app:srcCompat="@drawable/ic_close" />
 
-    </androidx.cardview.widget.CardView>
+                </FrameLayout>
 
-  </FrameLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
 
 </layout>

@@ -1,6 +1,5 @@
 package id.co.app.nucocore.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,11 +7,8 @@ import id.co.app.nucocore.base.BaseViewHolder
 import id.co.app.nucocore.base.adapterdelegate.DelegateAdapter
 import id.co.app.nucocore.base.adapterdelegate.DelegateAdapterItem
 import id.co.app.nucocore.databinding.ItemSelectionDateBinding
-import id.co.app.nucocore.databinding.ItemSelectionGeneralBinding
 import id.co.app.nucocore.domain.entities.view.SelectionDate
-import id.co.app.nucocore.domain.entities.view.SelectionGeneral
 import id.co.app.nucocore.extension.toLong
-import id.co.app.nucocore.singleton.LOG_TAG
 
 class SelectionDateAdapter(
   private val listener: (Long?) -> Unit

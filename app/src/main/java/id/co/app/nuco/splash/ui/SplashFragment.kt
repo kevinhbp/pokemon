@@ -20,7 +20,6 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
 
   override fun setupView() {
     setStatusColor(false)
-    (requireActivity() as MainActNavi).showBottomNavigation(false)
   }
 
   override fun observeViewModel() {

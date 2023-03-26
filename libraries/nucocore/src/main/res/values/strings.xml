@@ -9,9 +9,11 @@
   <string name="exit_application">Exit App</string>
   <string name="loading">Loading</string>
   <string name="please_wait">Please Wait</string>
-  <string name="re_connect">Re connect</string>
+  <string name="re_connect">Re-connect</string>
+  <string name="dismiss">Dismiss</string>
   <string name="username" translatable="false">Username</string>
   <string name="password" translatable="false">Password</string>
+  <string name="type">Type</string>
 
   <string name="err_connection_label">Connection failed</string>
   <string name="err_connection_message">Check again Your connection</string>
