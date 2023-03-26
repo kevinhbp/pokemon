@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="image_large">260dp</dimen>
+  <dimen name="image_moderate">210dp</dimen>
+  <dimen name="image_small">180dp</dimen>
+</resources>

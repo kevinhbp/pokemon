@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="model"
+      type="id.co.app.nucocore.domain.entities.row.DefaultPairTextModel" />
+  </data>
+
+  <FrameLayout
+    android:id="@+id/wrapper_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:bindViewHeight="@{model.heightInPx}">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginHorizontal="@dimen/space_x3"
+      android:layout_marginVertical="@dimen/space_x1"
+      android:orientation="vertical"
+      tools:ignore="UselessParent">
+
+      <TextView
+        android:id="@+id/text_label"
+        style="@style/Headline.Moderate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{model.label}"
+        app:bindTextColor="@{model.labelColorId}"
+        tools:text="Species" />
+
+      <TextView
+        android:id="@+id/text_value"
+        style="@style/Body.Moderate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_x1"
+        android:text="@{model.value}"
+        app:bindTextColor="@{model.valueColorId}"
+        tools:text="@tools:sample/lorem/random" />
+
+    </LinearLayout>
+
+  </FrameLayout>
+</layout>

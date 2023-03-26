@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Number of columns for list grid -->
+    <integer name="grid_columns">2</integer>
+    <integer name="scrim_animation_duration">100</integer>
+    <integer name="grid_small_columns">1</integer>
+    <integer name="item_title_max_length">43</integer>
+
+    <integer name="grid_location">3</integer>
+
+</resources>

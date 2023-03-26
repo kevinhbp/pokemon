@@ -1,0 +1,22 @@
+{
+  "status": true,
+  "code": 200,
+  "message": "Request Success",
+  "data": [
+    {
+      "id": 144,
+      "code": "GH",
+      "description": "Green House"
+    },
+    {
+      "id": 145,
+      "code": "SH",
+      "description": "Shading House"
+    },
+    {
+      "id": 146,
+      "code": "OA",
+      "description": "Open Area"
+    }
+  ]
+}

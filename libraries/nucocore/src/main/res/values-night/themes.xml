@@ -1,0 +1,49 @@
+<resources>
+
+    <style name="Theme.App" parent="Base.Theme.App" />
+
+    <!-- Base application theme. -->
+    <style name="Base.Theme.App" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_primary_night</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant_night</item>
+        <item name="colorOnPrimary">@color/color_on_primary_night</item>
+        <item name="colorPrimaryDark">@color/color_secondary_night</item>
+        <item name="colorAccent">@color/color_accent_night</item>
+        <item name="colorSurface">@color/color_surface_night</item>
+        <item name="colorOnSurface">@color/color_on_surface_night</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_secondary_night</item>
+        <item name="colorSecondaryVariant">@color/color_secondary_variant_night</item>
+        <item name="colorOnSecondary">@color/color_on_secondary_night</item>
+
+        <!-- Status bar color. -->
+        <!-- <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item> -->
+
+        <!-- Background color. -->
+        <item name="android:colorBackground">@color/color_background_night</item>
+        <item name="colorOnBackground">@color/color_on_background_night</item>
+
+        <!-- On Error color. -->
+        <item name="colorError">@color/color_error_night</item>
+        <item name="colorOnError">@color/color_on_error_night</item>
+
+    </style>
+
+    <style name="Theme.App.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.App.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="TextAppearance.App.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="BackgroundTextFull" >
+        <item name="android:background">?android:attr/colorBackground</item>
+    </style>
+
+</resources>

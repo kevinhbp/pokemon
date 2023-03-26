@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="model"
+      type="id.co.app.nucocore.domain.entities.row.SubtitleTextWithButtonModel" />
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:bindViewHeight="@{model.heightInPx}">
+
+    <TextView
+      android:id="@+id/text_1"
+      style="@style/Headline.Large"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/space_x3"
+      android:text="@{model.text}"
+      app:bindTextColor="@{model.colorId}"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="@string/assessment_list" />
+
+    <TextView
+      android:id="@+id/button_action"
+      style="@style/Button.Primary"
+      android:layout_width="wrap_content"
+      android:layout_height="@dimen/button_size_small"
+      android:layout_marginEnd="@dimen/space_x3"
+      android:text="@{model.buttonLabel}"
+      android:textSize="@dimen/text_headline_tiny"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="@string/create_new_assessment" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

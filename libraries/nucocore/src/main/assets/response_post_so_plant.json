@@ -1,0 +1,21 @@
+{
+  "status": true,
+  "code": 200,
+  "message": "Request Success",
+  "data": [
+    {
+      "status": true,
+      "message": "",
+      "data": {
+        "local_id": 123,
+        "id": 48,
+        "date": 1668564742479,
+        "ns_code": "AC1002AA-S-221129001",
+        "assessment": 21,
+        "quantity": 68,
+        "note": "test from API",
+        "location": 19
+      }
+    }
+  ]
+}

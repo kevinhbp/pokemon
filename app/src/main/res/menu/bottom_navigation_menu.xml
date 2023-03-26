@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:id="@+id/navigation_home"
+    android:icon="@drawable/ic_home"
+    android:title="@string/home" />
+
+  <item
+    android:id="@+id/navigation_pest_and_disease"
+    android:icon="@drawable/ic_pest_disease"
+    android:title="@string/pest_and_disease" />
+
+  <item
+    android:id="@+id/navigation_nursery_assessment"
+    android:icon="@drawable/ic_nursery_assessment"
+    android:title="@string/nursery_assessment" />
+
+  <item
+    android:id="@+id/navigation_stock_opname"
+    android:icon="@drawable/ic_stock_opname"
+    android:title="@string/stock_opname" />
+
+  <item
+    android:id="@+id/navigation_daily_progress"
+    android:icon="@drawable/ic_daily_progress"
+    android:title="@string/daily_progress" />
+
+  <item
+    android:id="@+id/navigation_profile"
+    android:icon="@drawable/ic_profile"
+    android:title="@string/profile" />
+
+</menu>

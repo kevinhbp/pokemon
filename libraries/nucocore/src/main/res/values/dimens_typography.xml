@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="text_headline_hero" category="textsize">24sp</dimen>
+  <dimen name="text_headline_extra_large" category="textsize">20sp</dimen>
+  <dimen name="text_headline_large" category="textsize">18sp</dimen>
+  <dimen name="text_headline_moderate" category="textsize">16sp</dimen>
+  <dimen name="text_headline_small" category="textsize">14sp</dimen>
+  <dimen name="text_headline_tiny" category="textsize">12sp</dimen>
+  <dimen name="text_body_moderate" category="textsize">14sp</dimen>
+  <dimen name="text_body_small" category="textsize">12sp</dimen>
+  <dimen name="text_caption_moderate" category="textsize">11sp</dimen>
+  <dimen name="text_caption_small" category="textsize">10sp</dimen>
+</resources>

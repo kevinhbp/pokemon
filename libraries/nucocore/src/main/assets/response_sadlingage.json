@@ -1,0 +1,103 @@
+{
+  "status": true,
+  "code": 200,
+  "message": "Request Success",
+  "data": [
+    {
+      "id": 19,
+      "min": 21,
+      "max": 30,
+      "value": "21-30",
+      "description": "Seedling at 21 – 30 days",
+      "source": "Seed"
+    },
+    {
+      "id": 20,
+      "min": 31,
+      "max": 60,
+      "value": "31-60",
+      "description": "Seedling at 31 – 60 days",
+      "source": "Seed"
+    },
+    {
+      "id": 21,
+      "min": 61,
+      "max": 90,
+      "value": "61-90",
+      "description": "Seedling at 61 – 90 days",
+      "source": "Seed"
+    },
+    {
+      "id": 22,
+      "min": 91,
+      "max": 120,
+      "value": "91-120",
+      "description": "Seedling at 91 – 120 days",
+      "source": "Seed"
+    },
+    {
+      "id": 551,
+      "min": 21,
+      "max": 30,
+      "value": "21 – 30",
+      "description": "Cutting at 21 – 30 days",
+      "source": "Shoot"
+    },
+    {
+      "id": 552,
+      "min": 31,
+      "max": 60,
+      "value": "31 – 60",
+      "description": "Cutting at 31 – 60 days",
+      "source": "Shoot"
+    },
+    {
+      "id": 553,
+      "min": 61,
+      "max": 90,
+      "value": "61 – 90",
+      "description": "Cutting at 61 – 90 days",
+      "source": "Shoot"
+    },
+    {
+      "id": 554,
+      "min": 91,
+      "max": 120,
+      "value": "91 – 120",
+      "description": "Cutting at 91 – 120 days",
+      "source": "Shoot"
+    },
+    {
+      "id": 555,
+      "min": 0,
+      "max": 29,
+      "value": "< 30 day",
+      "description": "TC Plant at < 30 day",
+      "source": "Plantlet"
+    },
+    {
+      "id": 556,
+      "min": 30,
+      "max": 50,
+      "value": "30 - 50",
+      "description": "TC Plant at 30 - 50 days",
+      "source": "Plantlet"
+    },
+    {
+      "id": 557,
+      "min": 51,
+      "max": 75,
+      "value": "51 - 75",
+      "description": "TC Plant at 51 - 75 days",
+      "source": "Plantlet"
+    },
+    {
+      "id": 558,
+      "min": 76,
+      "max": 3650,
+      "value": "> 75 day",
+      "description": "TC Plant at > 75 day",
+      "source": "Plantlet"
+    }
+  ]
+}

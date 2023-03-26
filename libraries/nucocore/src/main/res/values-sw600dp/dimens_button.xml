@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="button_size_large" category="buttonsize">82dp</dimen>
+  <dimen name="button_size_moderate" category="buttonsize">46sp</dimen>
+  <dimen name="button_size_small" category="buttonsize">35sp</dimen>
+
+  <dimen name="button_width_large" category="buttonwidth">400dp</dimen>
+  <dimen name="button_width_moderate" category="buttonwidth">300dp</dimen>
+</resources>

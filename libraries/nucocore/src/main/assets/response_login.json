@@ -1,0 +1,15 @@
+{
+  "status": true,
+  "code": 200,
+  "message": "Request Success",
+  "data": {
+    "token": "2EA2cI7q_scK7qYcmzPCGqpG-Q62dtuXUkbCNXGE7lGWtZbBEcSIYEqxJ1iFRh4s",
+    "user": {
+      "user_id": "00023744",
+      "plantcode": "1A89",
+      "pernr": 23744,
+      "fullname": "GWEN RAYFIELD",
+      "role": "H "
+    }
+  }
+}

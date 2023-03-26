@@ -1,0 +1,9 @@
+
+<resources>
+
+    <style name="Theme.App" parent="Base.Theme.App">
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+</resources>

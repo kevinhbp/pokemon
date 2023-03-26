@@ -1,0 +1,19 @@
+{
+  "status": true,
+  "code": 200,
+  "message": "Request Success",
+  "data": [
+    {
+      "status": true,
+      "message": "Data succesfully posted",
+      "data": {
+        "local_id": 123,
+        "id": 4,
+        "stp_code": "EP1001AA-GH1T1AB4",
+        "date": 1668564742479,
+        "stock": 80,
+        "note": "test from API"
+      }
+    }
+  ]
+}

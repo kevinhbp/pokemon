@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_default"
+    android:orientation="horizontal"
+    tools:layout_margin="@dimen/space_x4">
+
+    <FrameLayout
+        android:layout_width="@dimen/dialog_loading_container_width"
+        android:layout_height="@dimen/dialog_loading_container_height">
+
+        <ProgressBar
+            android:layout_width="@dimen/progress_size"
+            android:layout_height="@dimen/progress_size"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/primary_active" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/text_body"
+        style="@style/Body.Small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="4"
+        android:paddingHorizontal="@dimen/space_x4"
+        tools:text="Dialog body message\nwith second line\nand third line\nalso with fourth line." />
+
+</LinearLayout>

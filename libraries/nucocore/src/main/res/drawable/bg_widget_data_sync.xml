@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_checked="false">
+    <layer-list>
+      <item>
+        <shape android:shape="rectangle">
+          <gradient
+            android:angle="45"
+            android:startColor="@color/nuco_green_3"
+            android:endColor="@color/nuco_light_blue_1" />
+        </shape>
+      </item>
+      <item android:drawable="@drawable/bg_ripple_card" />
+    </layer-list>
+  </item>
+
+  <item android:state_checked="true">
+    <layer-list>
+      <item>
+        <shape android:shape="rectangle">
+          <gradient
+            android:angle="45"
+            android:startColor="@color/nuco_red_3"
+            android:endColor="@color/nuco_red_2" />
+        </shape>
+      </item>
+      <item android:drawable="@drawable/bg_ripple_card" />
+    </layer-list>
+  </item>
+</selector>

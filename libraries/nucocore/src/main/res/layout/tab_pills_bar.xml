@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/tab_pills_bar_wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="@dimen/tabs_width"
+    android:minHeight="@dimen/tabs_height">
+
+    <androidx.cardview.widget.CardView
+      android:id="@+id/tab_pills_bar_cv_pills"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:cardBackgroundColor="@color/color_tabs_wrapper"
+      app:cardCornerRadius="@dimen/tabs_height"
+      app:cardElevation="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="@+id/tab_pills_bar_cv_pills"
+      app:layout_constraintEnd_toEndOf="@+id/tab_pills_bar_cv_pills"
+      app:layout_constraintStart_toStartOf="@+id/tab_pills_bar_cv_pills"
+      app:layout_constraintTop_toTopOf="@+id/tab_pills_bar_cv_pills">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/tab_pills_bar_text_tab_1"
+          style="@style/Headline.Tiny.Demi"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@drawable/bg_ripple_button"
+          android:clickable="true"
+          android:focusable="true"
+          android:gravity="center"
+          android:textColor="@color/color_on_tabs_default"
+          tools:text="PEST" />
+
+        <TextView
+          android:id="@+id/tab_pills_bar_text_tab_2"
+          style="@style/Headline.Tiny.Demi"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@drawable/bg_ripple_button"
+          android:clickable="true"
+          android:focusable="true"
+          android:gravity="center"
+          android:textColor="@color/color_on_tabs_default"
+          tools:text="DISEASE" />
+
+        <TextView
+          android:id="@+id/tab_pills_bar_text_tab_3"
+          style="@style/Headline.Tiny.Demi"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@drawable/bg_ripple_button"
+          android:clickable="true"
+          android:focusable="true"
+          android:gravity="center"
+          android:textColor="@color/color_on_tabs_default"
+          tools:text="ABIOTIC" />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clickable="false"
+        android:focusable="false"
+        android:orientation="horizontal">
+
+        <View
+          android:id="@+id/tab_pills_bar_space_1"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@android:color/transparent"
+          android:clickable="false"
+          android:focusable="false"
+          android:visibility="gone" />
+
+        <View
+          android:id="@+id/tab_pills_bar_space_2"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@android:color/transparent"
+          android:clickable="false"
+          android:focusable="false"
+          android:visibility="gone" />
+
+        <androidx.cardview.widget.CardView
+          android:id="@+id/tab_pills_bar_cv_selected"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_marginHorizontal="@dimen/space_x1"
+          android:layout_marginVertical="@dimen/space_x1"
+          android:layout_weight="1"
+          app:cardBackgroundColor="@color/color_tabs"
+          app:cardCornerRadius="@dimen/tabs_height"
+          app:cardElevation="@dimen/elevation_small">
+
+          <TextView
+            android:id="@+id/tab_pills_bar_text_tab_selected"
+            style="@style/Headline.Tiny"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:textColor="@color/color_on_tabs_active"
+            tools:text="PEST" />
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+          android:id="@+id/tab_pills_bar_space_3"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@android:color/transparent"
+          android:clickable="false"
+          android:focusable="false"
+          android:visibility="visible" />
+
+        <View
+          android:id="@+id/tab_pills_bar_space_4"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@android:color/transparent"
+          android:clickable="false"
+          android:focusable="false"
+          android:visibility="visible" />
+
+      </LinearLayout>
+
+    </FrameLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="TextInputLayout.Rounded" parent="">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">8dp</item>
+  </style>
+
+  <style name="ThemeOverlay.App.ExposedDropdownMenu" parent="">
+    <item name="colorPrimary">@color/color_primary</item>
+    <item name="boxBackgroundColor">@android:color/transparent</item>
+    <item name="colorError">@color/color_error</item><!-- Additional styles on  ly available via a theme overlay (HORRID) -->
+    <item name="materialThemeOverlay">@style/Theme.MyApp.Spinner.ThemeOverlay</item>
+  </style>
+
+  <!--
+    Spinner theme overlay (Access to additional styling for the child
+    AutoCompleteTextView, which includes this spinner's dropdown/popup menu)
+     -->
+  <style name="Theme.MyApp.Spinner.ThemeOverlay" parent="">
+    <!-- Style inception - hook into styling the AutoCompleteTextView -->
+    <item name="autoCompleteTextViewStyle">@style/Widget.MyApp.Spinner.ThemeOverlay.AutoCompleteTextView</item>
+    <!-- Background color of dropdown (popup) entries -->
+    <item name="colorSurface">@color/nuco_black</item>
+    <!-- Dropdown arrow color -->
+    <item name="colorOnSurface">@color/nuco_black</item>
+  </style>
+
+  <!-- Text (NOT the popup) of the child AutoCompleteTextView of our material spinner -->
+  <style name="Widget.MyApp.Spinner.ThemeOverlay.AutoCompleteTextView" parent="Widget.AppCompat.AutoCompleteTextView">
+    <!--
+    Another nasty little bug. Our main spinner style inherits from material
+    TextInputLayout.OutlinedBox.ExposedDropdownMenu, which means we want the
+    spinner to have an outline. But this won't work unless we manually FORCE
+    a null background on the child AutoCompleteTextView.
+    https://github.com/material-components/material-components-android/issues/1989
+    -->
+    <item name="android:background">@null</item>
+    <!-- Restore padding to sanity -->
+    <item name="android:paddingLeft">16dp</item>
+    <item name="android:paddingRight">16dp</item>
+    <!-- Color of selected item -->
+    <item name="android:textColor">?attr/colorOnBackground</item>
+  </style>
+  <!-- Material spinner 'item' layout style -->
+  <style name="Widget.MyApp.SpinnerItem" parent="Widget.AppCompat.TextView">
+    <item name="android:textColor">@color/nuco_black</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">1</item>
+    <!--        <item name="android:padding">16dp</item>-->
+  </style>
+
+  <style name="Widget.App.ExposedDropdownMenu" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+    <item name="materialThemeOverlay">@style/ThemeOverlay.App.ExposedDropdownMenu</item>
+    <item name="hintTextColor">@color/color_on_surface</item>
+    <item name="endIconTint">@color/color_on_surface</item>
+    <item name="android:textColorHint">@color/color_on_surface</item>
+    <item name="shapeAppearanceOverlay">@style/TextInputLayout.Rounded</item>
+  </style>
+
+  <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <item name="hintTextAppearance">@style/Headline.Small</item>
+    <item name="boxStrokeColor">@color/input_stroke_color</item>
+    <item name="boxStrokeWidth">1.6dp</item>
+    <item name="boxStrokeWidthFocused">1.6dp</item>
+    <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.UA.TextInputLayout.Rounded</item>
+  </style>
+
+  <style name="ShapeAppearanceOverlay.UA.TextInputLayout.Rounded" parent="">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">10dp</item>
+  </style>
+
+  <style name="AutoCompleteTextView" parent="Headline.Moderate.Demi">
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:textColor">@color/nuco_gray_1</item>
+    <item name="android:textColorHint">@color/nuco_gray_2</item>
+  </style>
+
+  <style name="AutoCompleteTextViewBook" parent="Body.Moderate">
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:textColor">@color/nuco_gray_1</item>
+    <item name="android:textColorHint">@color/nuco_gray_2</item>
+  </style>
+
+  <style name="EditText" parent="Headline.Moderate.Demi">
+    <item name="android:background">@null</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:textColorHint">@color/color_text_gray_2</item>
+  </style>
+
+  <!-- Bottom Navigation Bar -->
+  <style name="BottomNavigationBar" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSizeTopLeft">20dp</item>
+    <item name="cornerSizeTopRight">20dp</item>
+    <item name="cornerSizeBottomLeft">0dp</item>
+    <item name="cornerSizeBottomRight">0dp</item>
+  </style>
+
+  <!-- Line -->
+  <style name="Line" parent="">
+    <item name="android:layout_height">3dp</item>
+    <item name="android:background">@drawable/bg_line_default</item>
+    <item name="android:layerType">software</item>
+  </style>
+
+  <!-- Tag -->
+  <style name="Tag" parent="">
+    <item name="android:layout_height">@dimen/tag_height</item>
+    <item name="android:textColor">@color/color_text_green_0</item>
+    <item name="android:textSize">@dimen/text_caption_small</item>
+    <item name="android:fontFamily">@font/maisonneue_ext_demi</item>
+    <item name="android:paddingStart">@dimen/space_x2</item>
+    <item name="android:paddingEnd">@dimen/space_x2</item>
+    <item name="android:includeFontPadding">false</item>
+    <item name="android:gravity">center</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:background">@drawable/bg_tag_default</item>
+    <item name="android:clickable">false</item>
+    <item name="android:focusable">false</item>
+  </style>
+
+  <!-- Spinner -->
+  <style name="Spinner">
+    <item name="android:background">@drawable/bg_input_default</item>
+    <item name="android:popupBackground">@drawable/bg_spinner_popup</item>
+  </style>
+
+  <!-- Input Style Primary Color -->
+  <style name="TextInputLayoutPrimary" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <item name="hintTextAppearance">@style/Headline.Small</item>
+    <item name="boxStrokeColor">@color/input_stroke_color</item>
+    <item name="boxStrokeWidth">1.6dp</item>
+    <item name="boxStrokeWidthFocused">1.6dp</item>
+    <item name="hintAnimationEnabled">false</item>
+    <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.UA.TextInputLayout.Rounded</item>
+  </style>
+
+  <style name="AutoCompleteTextViewPrimary" parent="Headline.Moderate.Demi">
+    <item name="android:background">@null</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:textColor">@color/nuco_purple_1</item>
+    <item name="android:textColorHint">@color/nuco_purple_3_light</item>
+  </style>
+</resources>

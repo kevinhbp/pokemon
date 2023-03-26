@@ -1,0 +1,83 @@
+{
+  "status": true,
+  "code": 200,
+  "message": "Request Success",
+  "data": [
+    {
+      "id": 12,
+      "description": "Eucalyptus deglupta"
+    },
+    {
+      "id": 143,
+      "description": "Eucalyptus pellita"
+    },
+    {
+      "id": 144,
+      "description": "Eucalyptus urophylla"
+    },
+    {
+      "id": 145,
+      "description": "Eucalyptus hybrid"
+    },
+    {
+      "id": 146,
+      "description": "Eucalyptus grandis"
+    },
+    {
+      "id": 147,
+      "description": "Eucalyptus urograndis"
+    },
+    {
+      "id": 148,
+      "description": "Eucalyptus tereticornis"
+    },
+    {
+      "id": 149,
+      "description": "Eucalyptus robusta"
+    },
+    {
+      "id": 150,
+      "description": "Eucalyptus dunii"
+    },
+    {
+      "id": 151,
+      "description": "Eucalyptus brassiana"
+    },
+    {
+      "id": 152,
+      "description": "Eucalyptus camaldulensis"
+    },
+    {
+      "id": 153,
+      "description": "Acacia crassicarpa"
+    },
+    {
+      "id": 154,
+      "description": "Acacia mangium"
+    },
+    {
+      "id": 155,
+      "description": "Acacia auriculiformis"
+    },
+    {
+      "id": 156,
+      "description": "Acacia peregrinalis"
+    },
+    {
+      "id": 157,
+      "description": "Acacia hybrid"
+    },
+    {
+      "id": 158,
+      "description": "Acacia nilotica"
+    },
+    {
+      "id": 282,
+      "description": "Corymbia hybrid"
+    },
+    {
+      "id": 494,
+      "description": "Eucalyptus amplifolia"
+    }
+  ]
+}

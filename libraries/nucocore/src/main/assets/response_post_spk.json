@@ -1,0 +1,31 @@
+{
+  "status": true,
+  "code": 200,
+  "message": "Request Success",
+  "data": [
+    {
+      "message": "Production Order Posted Successfully",
+      "data": {
+        "sapland": "01",
+        "order_no": "120000300",
+        "opration_activity": "0010",
+        "input_date": "2022-10-03T15:16:47Z",
+        "confirmation_text": "test input 1",
+        "confirmation_qty": 100
+      },
+      "status": true
+    },
+    {
+      "message": "Production Order Posted Successfully",
+      "data": {
+        "sapland": "01",
+        "order_no": "120000301",
+        "opration_activity": "0010",
+        "input_date": "2022-10-03T15:16:47Z",
+        "confirmation_text": "test input 2",
+        "confirmation_qty": 100
+      },
+      "status": true
+    }
+  ]
+}

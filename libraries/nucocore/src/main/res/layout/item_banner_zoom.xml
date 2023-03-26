@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="model"
+      type="id.co.app.nucocore.domain.entities.row.ZoomBannerModel" />
+  </data>
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.github.chrisbanes.photoview.PhotoView
+      android:id="@+id/image_1"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:bindImageData="@{model.imageHash}"
+      tools:src="@drawable/illustration_other_alt" />
+
+    <View
+      android:id="@+id/button_action"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/bg_ripple_card_primary"
+      android:clickable="true"
+      android:focusable="true" />
+
+  </FrameLayout>
+
+</layout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="model"
+      type="id.co.app.nucocore.domain.entities.row.DefaultEmptyStateModel" />
+  </data>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/content_empty_state_layout_height"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/image_illustration"
+      android:layout_width="@dimen/image_small"
+      android:layout_height="@dimen/image_small"
+      android:layout_gravity="center"
+      android:layout_marginBottom="@dimen/space_x4"
+      app:gone="@{model.goneIllustration}"
+      app:bindImageResId="@{model.illustrationResId}"
+      app:srcCompat="@drawable/illustration_connection_failure" />
+
+    <TextView
+      android:id="@+id/text_title"
+      style="@style/Headline.Large"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:maxLines="2"
+      android:text="@{model.textTitle}"
+      tools:text="@string/err_connection_label" />
+
+    <TextView
+      android:id="@+id/text_message"
+      style="@style/Body.Moderate"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginTop="@dimen/space_x2"
+      android:gravity="center"
+      android:maxLines="3"
+      android:text="@{model.textMessage}"
+      android:textColor="@color/color_text_gray_0"
+      tools:text="@string/err_connection_message" />
+
+    <TextView
+      android:id="@+id/button_primary"
+      style="@style/Button.Primary"
+      android:layout_width="@dimen/button_width_moderate"
+      android:layout_height="@dimen/button_size_small"
+      android:layout_gravity="center"
+      android:layout_marginTop="@dimen/space_x5"
+      android:text="@{model.labelButtonPrimary}"
+      app:gone="@{model.goneButtonPrimary}"
+      tools:text="@string/re_connect" />
+
+    <TextView
+      android:id="@+id/button_secondary"
+      style="@style/Button.Tertiary"
+      android:layout_width="@dimen/button_width_moderate"
+      android:layout_height="@dimen/button_size_small"
+      android:layout_gravity="center"
+      android:layout_marginTop="@dimen/space_x2"
+      android:text="@{model.labelButtonSecondary}"
+      app:gone="@{model.goneButtonSecondary}"
+      tools:text="@string/dismiss" />
+
+  </LinearLayout>
+
+</layout>

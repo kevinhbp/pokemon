@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- Number of columns for list grid -->
+  <integer name="grid_columns">3</integer>
+  <integer name="grid_small_columns">2</integer>
+
+  <integer name="grid_location">5</integer>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="nuco_white">#FFFFFF</color>
+  <color name="nuco_black">#000000</color>
+  <color name="nuco_gray_1">#373737</color>
+  <color name="nuco_gray_2">#696969</color>
+  <color name="nuco_gray_3">#B8B8B8</color>
+  <color name="nuco_gray_4">#E0E0E0</color>
+  <color name="nuco_gray_5">#F5F5F5</color>
+  <color name="nuco_gray_6">#F8F8F8</color>
+  <color name="nuco_gray_7">#FBFBFB</color>
+  <color name="nuco_gray_8">#D5D5D5</color>
+  <color name="nuco_gray_9">#EDEDED</color>
+  <color name="nuco_purple_1">#5E35B1</color>
+  <color name="nuco_purple_2">#5F629E</color>
+  <color name="nuco_purple_3_dark">#4E3B55</color>
+  <color name="nuco_purple_3_light">#664B70</color>
+  <color name="nuco_purple_4">#E38DDD</color>
+  <color name="nuco_purple_5">#EBDFFF</color>
+  <color name="nuco_purple_6">#EEE5FF</color>
+  <color name="nuco_purple_7">#F7F3FF</color>
+  <color name="nuco_purple_blue_1">#5D609A</color>
+  <color name="nuco_purple_blue_2">#8387E1</color>
+  <color name="nuco_navy_blue_1">#3E4177</color>
+  <color name="nuco_green_1">#33947D</color>
+  <color name="nuco_green_2">#68A480</color>
+  <color name="nuco_green_3">#45A733</color>
+  <color name="nuco_green_blue_0">#329D9C</color>
+  <color name="nuco_green_blue_1">#DCFFFF</color>
+  <color name="nuco_light_green_0">#EEFFFF</color>
+  <color name="nuco_light_blue_1">#A9C9FD</color>
+  <color name="nuco_red_1">#C76363</color>
+  <color name="nuco_red_2">#FC3952</color>
+  <color name="nuco_red_3">#FF6074</color>
+  <color name="nuco_red_4">#FEA9B4</color>
+  <color name="nuco_red_5">#FFF0F2</color>
+  <color name="nuco_orange_0">#F36F56</color>
+  <color name="nuco_orange_1">#FFCDC3</color>
+  <color name="nuco_yellow_1">#B17F35</color>
+  <color name="nuco_yellow_2">#FFC444</color>
+
+  <color name="nuco_dialog_mask">#99000000</color>
+</resources>

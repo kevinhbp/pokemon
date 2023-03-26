@@ -1,0 +1,307 @@
+{
+  "status": true,
+  "code": 200,
+  "message": "Request Success",
+  "data": [
+    {
+      "detail_id": 1,
+      "header_id": 1,
+      "ns_code": "EP1001AA-C-221125001",
+      "identity": "EP1001AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Shoot"
+    },
+    {
+      "detail_id": 2,
+      "header_id": 1,
+      "ns_code": "EP1002AA-C-221125001",
+      "identity": "EP1002AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Shoot"
+    },
+    {
+      "detail_id": 3,
+      "header_id": 1,
+      "ns_code": "EP1003AA-C-221125001",
+      "identity": "EP1003AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Shoot"
+    },
+    {
+      "detail_id": 4,
+      "header_id": 1,
+      "ns_code": "EP1004AA-C-221125001",
+      "identity": "EP1004AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Shoot"
+    },
+    {
+      "detail_id": 5,
+      "header_id": 1,
+      "ns_code": "EP1005AA-C-221125001",
+      "identity": "EP1005AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Shoot"
+    },
+    {
+      "detail_id": 6,
+      "header_id": 1,
+      "ns_code": "EP1006AA-C-221125001",
+      "identity": "EP1006AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Shoot"
+    },
+    {
+      "detail_id": 7,
+      "header_id": 2,
+      "ns_code": "EP1007AA-P-221125001",
+      "identity": "EP1007AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 8,
+      "header_id": 2,
+      "ns_code": "EP1008AA-P-221125001",
+      "identity": "EP1008AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 9,
+      "header_id": 2,
+      "ns_code": "EP1009AA-P-221125001",
+      "identity": "EP1009AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 10,
+      "header_id": 2,
+      "ns_code": "EP1010AA-P-221125001",
+      "identity": "EP1010AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 11,
+      "header_id": 2,
+      "ns_code": "EP1011AA-P-221125001",
+      "identity": "EP1011AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 12,
+      "header_id": 2,
+      "ns_code": "EP1012AA-P-221125001",
+      "identity": "EP1012AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 13,
+      "header_id": 3,
+      "ns_code": "EP1001AA-P-221125001",
+      "identity": "EP1001AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 14,
+      "header_id": 3,
+      "ns_code": "EP1002AA-P-221125001",
+      "identity": "EP1002AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 15,
+      "header_id": 3,
+      "ns_code": "EP1003AA-P-221125001",
+      "identity": "EP1003AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 16,
+      "header_id": 3,
+      "ns_code": "EP1004AA-P-221125001",
+      "identity": "EP1004AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 17,
+      "header_id": 3,
+      "ns_code": "EP1005AA-P-221125001",
+      "identity": "EP1005AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 18,
+      "header_id": 3,
+      "ns_code": "EP1006AA-P-221125001",
+      "identity": "EP1006AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Field Trial",
+      "quantity": 50,
+      "source_type_desc": "Plantlet"
+    },
+    {
+      "detail_id": 19,
+      "header_id": 4,
+      "ns_code": "EP1007AA-S-221125001",
+      "identity": "EP1007AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Seed Orchard",
+      "quantity": 50,
+      "source_type_desc": "Seed"
+    },
+    {
+      "detail_id": 20,
+      "header_id": 4,
+      "ns_code": "EP1008AA-S-221125001",
+      "identity": "EP1008AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Seed Orchard",
+      "quantity": 50,
+      "source_type_desc": "Seed"
+    },
+    {
+      "detail_id": 21,
+      "header_id": 4,
+      "ns_code": "EP1009AA-S-221125001",
+      "identity": "EP1009AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Seed Orchard",
+      "quantity": 50,
+      "source_type_desc": "Seed"
+    },
+    {
+      "detail_id": 22,
+      "header_id": 4,
+      "ns_code": "EP1010AA-S-221125001",
+      "identity": "EP1010AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Seed Orchard",
+      "quantity": 50,
+      "source_type_desc": "Seed"
+    },
+    {
+      "detail_id": 23,
+      "header_id": 4,
+      "ns_code": "EP1011AA-S-221125001",
+      "identity": "EP1011AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Seed Orchard",
+      "quantity": 50,
+      "source_type_desc": "Seed"
+    },
+    {
+      "detail_id": 24,
+      "header_id": 4,
+      "ns_code": "EP1012AA-S-221125001",
+      "identity": "EP1012AA",
+      "species": "Eucalyptus pellita",
+      "purpose": "Seed Orchard",
+      "quantity": 50,
+      "source_type_desc": "Seed"
+    },
+    {
+      "detail_id": 25,
+      "header_id": 5,
+      "ns_code": "AC1001AA-S-221129001",
+      "identity": "AC1001AA",
+      "species": "Acacia crassicarpa",
+      "purpose": "Field Trial",
+      "quantity": 100,
+      "source_type_desc": "Seed"
+    },
+    {
+      "detail_id": 26,
+      "header_id": 5,
+      "ns_code": "AC1002AA-S-221129001",
+      "identity": "AC1002AA",
+      "species": "Acacia crassicarpa",
+      "purpose": "Field Trial",
+      "quantity": 100,
+      "source_type_desc": "Seed"
+    },
+    {
+      "detail_id": 27,
+      "header_id": 5,
+      "ns_code": "AC1003AA-S-221129001",
+      "identity": "AC1003AA",
+      "species": "Acacia crassicarpa",
+      "purpose": "Field Trial",
+      "quantity": 100,
+      "source_type_desc": "Seed"
+    },
+    {
+      "detail_id": 28,
+      "header_id": 5,
+      "ns_code": "AC1004AA-S-221129001",
+      "identity": "AC1004AA",
+      "species": "Acacia crassicarpa",
+      "purpose": "Field Trial",
+      "quantity": 100,
+      "source_type_desc": "Seed"
+    },
+    {
+      "detail_id": 29,
+      "header_id": 5,
+      "ns_code": "AC1005AA-S-221129001",
+      "identity": "AC1005AA",
+      "species": "Acacia crassicarpa",
+      "purpose": "Field Trial",
+      "quantity": 100,
+      "source_type_desc": "Seed"
+    },
+    {
+      "detail_id": 30,
+      "header_id": 5,
+      "ns_code": "AC1006AA-S-221129001",
+      "identity": "AC1006AA",
+      "species": "Acacia crassicarpa",
+      "purpose": "Field Trial",
+      "quantity": 100,
+      "source_type_desc": "Seed"
+    }
+  ]
+}

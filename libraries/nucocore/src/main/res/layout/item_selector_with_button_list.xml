@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="model"
+      type="id.co.app.nucocore.domain.entities.row.SelectorListButtonModel" />
+  </data>
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="@dimen/space_x2"
+      android:layout_marginVertical="@dimen/space_x1"
+      android:background="@drawable/bg_item_card_information"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/text_label"
+        style="@style/Headline.Small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_x3"
+        android:layout_marginTop="@dimen/space_x3"
+        android:text="@{model.label}"
+        tools:text="@string/change" />
+
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/as_height" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_x4" />
+
+    </LinearLayout>
+
+  </FrameLayout>
+
+</layout>

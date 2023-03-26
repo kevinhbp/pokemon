@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:drawable="@drawable/bg_bottom_nav_bar_shadow"
+    android:top="0dp" />
+
+  <item
+    android:top="8dp">
+    <shape android:shape="rectangle">
+      <solid android:color="@color/nuco_white" />
+      <corners
+        android:topLeftRadius="@dimen/radius_card_moderate"
+        android:topRightRadius="@dimen/radius_card_moderate" />
+    </shape>
+  </item>
+
+</layer-list>

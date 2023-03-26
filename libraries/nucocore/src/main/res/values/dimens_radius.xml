@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="radius_card_large" category="card-radius">45dp</dimen>
+  <dimen name="radius_card_moderate" category="card-radius">20dp</dimen>
+  <dimen name="radius_card_small" category="card-radius">10dp</dimen>
+</resources>

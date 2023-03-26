@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="model"
+      type="id.co.app.profile.model.HeaderProfileModel" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/color_text_navy_0">
+
+    <TextView
+      android:id="@+id/text_initial"
+      style="@style/Headline.Hero"
+      android:layout_width="80dp"
+      android:layout_height="80dp"
+      android:layout_marginVertical="@dimen/space_x10"
+      android:layout_marginStart="@dimen/space_x5"
+      android:background="@drawable/bg_circle_silver"
+      android:gravity="center"
+      android:maxLength="2"
+      android:text="@{model.textInitial}"
+      android:textColor="@color/color_text_navy_0"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="KP" />
+
+    <LinearLayout
+      android:id="@+id/wrapper_profile"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/space_x3"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="@+id/text_initial"
+      app:layout_constraintStart_toEndOf="@+id/text_initial"
+      app:layout_constraintTop_toTopOf="@+id/text_initial">
+
+      <TextView
+        android:id="@+id/text_name"
+        style="@style/Headline.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="@{model.mName}"
+        android:textColor="@color/color_text_white_1"
+        tools:text="Kevin Putro" />
+
+      <TextView
+        android:id="@+id/text_location"
+        style="@style/Body.Moderate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="@{model.textLocation}"
+        android:textColor="@color/color_text_white_1"
+        tools:text="Perawang Field" />
+
+      <TextView
+        android:id="@+id/text_id"
+        style="@style/Headline.Tiny.Demi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_x2"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="@{model.textPID}"
+        android:textColor="@color/color_text_white_1"
+        tools:text="0001143792" />
+
+    </LinearLayout>
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

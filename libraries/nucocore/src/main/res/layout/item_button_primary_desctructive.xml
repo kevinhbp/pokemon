@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="id.co.app.nucocore.domain.entities.row.ButtonPrimaryDestructiveModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/button_view"
+            style="@style/Button.Primary.Destructive"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/space_x3"
+            android:layout_marginVertical="@dimen/space_x1"
+            android:enabled="@{model.enable}"
+            android:text="@{model.label}"
+            tools:text="@string/app_name" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_size_moderate"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            app:gone="@{model.goneLoading}"
+            tools:visibility="visible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/space_x8"
+                android:background="@color/primary_destructive" />
+
+            <ProgressBar
+                android:layout_width="@dimen/icon_large"
+                android:layout_height="@dimen/icon_large"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/nuco_white" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</layout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Spacing -->
+  <dimen name="space_1dp" category="space">1dp</dimen>
+  <dimen name="space_2dp" category="space">2dp</dimen>
+  <dimen name="space_x1" category="space">4dp</dimen>
+  <dimen name="space_x2" category="space">8dp</dimen>
+  <dimen name="space_x3" category="space">12dp</dimen>
+  <dimen name="space_x4" category="space">16dp</dimen>
+  <dimen name="space_x5" category="space">20dp</dimen>
+  <dimen name="space_x6" category="space">24dp</dimen>
+  <dimen name="space_x7" category="space">28dp</dimen>
+  <dimen name="space_x8" category="space">32dp</dimen>
+  <dimen name="space_x9" category="space">36dp</dimen>
+  <dimen name="space_x10" category="space">40dp</dimen>
+  <dimen name="space_x11" category="space">44dp</dimen>
+  <dimen name="space_x12" category="space">48dp</dimen>
+
+
+  <dimen name="space_neg_x10" category="space-negative">-40dp</dimen>
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="TabPillsBar">
+
+    <attr name="tab_label1" format="string" />
+
+    <attr name="tab_label2" format="string" />
+
+    <attr name="tab_label3" format="string" />
+
+    <attr name="tab_backgroundColor" format="color" />
+
+    <attr name="tab_tabColor" format="color" />
+
+    <attr name="tab_textColor" format="color" />
+
+    <attr name="tab_activeTextColor" format="color" />
+
+    <attr name="tab_labelAllCaps" format="boolean" />
+
+    <attr name="tab_selectedIndex">
+      <flag name="first" value="0" />
+
+      <flag name="second" value="1" />
+
+      <flag name="third" value="2" />
+    </attr>
+  </declare-styleable>
+
+  <declare-styleable name="SwitchPillsBar">
+
+    <attr name="switch_image1" format="reference" />
+
+    <attr name="switch_label1" format="string" />
+
+    <attr name="switch_image2" format="reference" />
+
+    <attr name="switch_label2" format="string" />
+
+    <attr name="switch_backgroundColor" format="color" />
+
+    <attr name="switch_pillsColor" format="color" />
+
+    <attr name="switch_textColor" format="color" />
+
+    <attr name="switch_activeTextColor" format="color" />
+
+    <attr name="switch_labelAllCaps" format="boolean" />
+
+    <attr name="switch_selectedIndex">
+      <flag name="first" value="0" />
+
+      <flag name="second" value="1" />
+    </attr>
+  </declare-styleable>
+
+  <declare-styleable name="OurSpinner">
+    <attr name="spinner_label" format="string" />
+  </declare-styleable>
+</resources>

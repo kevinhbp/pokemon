@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="viewModel"
+      type="id.co.app.nucocore.components.blocker.BlockerViewModel" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:gone="@{viewModel.flagGoneLayout}">
+
+    <View
+      android:id="@+id/view_background"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:background="@color/nuco_dialog_mask"
+      android:clickable="true"
+      android:focusable="true"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+      android:id="@+id/card_empty_state_content"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="@dimen/space_x5"
+      android:layout_marginBottom="@dimen/space_x5"
+      android:background="@drawable/bg_empty_state_card"
+      android:orientation="vertical"
+      android:paddingHorizontal="@dimen/space_x10"
+      android:paddingTop="@dimen/space_x5"
+      android:paddingBottom="@dimen/space_x5"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent">
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_empty_state_illustration"
+        android:layout_width="@dimen/empty_state_image_size"
+        android:layout_height="@dimen/empty_state_image_size"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/space_x5"
+        app:bindImageResId="@{viewModel.imageIllustration}"
+        app:gone="@{viewModel.flagGoneImageIllustration}"
+        tools:src="@drawable/illustration_connection_failure" />
+
+      <TextView
+        android:id="@+id/text_empty_state_title"
+        style="@style/Headline.Hero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@{viewModel.textTitle}"
+        tools:text="@string/err_connection_label" />
+
+      <TextView
+        android:id="@+id/text_empty_state_message"
+        style="@style/Body.Moderate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_x2"
+        android:layout_marginBottom="@dimen/space_x10"
+        android:gravity="center"
+        android:text="@{viewModel.textMessage}"
+        tools:text="@string/err_connection_message" />
+
+      <TextView
+        android:id="@+id/button_empty_state_first"
+        style="@style/Button.Primary"
+        android:layout_width="@dimen/button_width_large"
+        android:layout_gravity="center"
+        android:onClick="@{viewModel::onClickButtonPrimary}"
+        android:text="@{viewModel.textButtonPrimary}"
+        app:gone="@{viewModel.flagGoneButtonPrimary}"
+        tools:text="@string/re_connect" />
+
+      <TextView
+        android:id="@+id/button_empty_state_second"
+        style="@style/Button.Tertiary"
+        android:layout_width="@dimen/button_width_large"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/space_x3"
+        android:onClick="@{viewModel::onClickButtonSecondary}"
+        android:text="@{viewModel.textButtonSecondary}"
+        app:gone="@{viewModel.flagGoneButtonSecondary}"
+        tools:text="@string/exit" />
+
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

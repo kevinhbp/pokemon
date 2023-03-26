@@ -1,0 +1,19 @@
+{
+  "status": true,
+  "code": 200,
+  "message": "Request Success",
+  "data": [
+    {
+      "id": "1",
+      "name": "Riau"
+    },
+    {
+      "id": "2",
+      "name": "Perawang"
+    },
+    {
+      "id": "3",
+      "name": "Jambi"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_default"
+    android:orientation="vertical"
+    tools:layout_margin="@dimen/space_x5">
+
+    <TextView
+      android:id="@+id/tv_title"
+      style="@style/Headline.Moderate"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingHorizontal="@dimen/space_x4"
+      android:paddingTop="@dimen/space_x3"
+      tools:text="Dialog title\nwith second line" />
+
+    <TextView
+      android:id="@+id/tv_body"
+      style="@style/Body.Moderate"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/space_x3"
+      android:ellipsize="end"
+      android:gravity="start|top"
+      android:lines="2"
+      android:maxLines="4"
+      android:paddingHorizontal="@dimen/space_x4"
+      android:paddingVertical="@dimen/space_x2"
+      tools:text="Dialog body message\nwith second line\nand third line\nalso with fourth line." />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/space_x2"
+      android:layout_marginBottom="@dimen/space_x2"
+      android:orientation="horizontal">
+
+      <View
+        android:id="@+id/vw_spc"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/space_x4"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+      <TextView
+        android:id="@+id/btn_negative"
+        style="@style/Button.Tertiary"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_size_small"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/space_x3"
+        android:layout_marginEnd="@dimen/space_x2"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true"
+        tools:text="Cancel" />
+
+      <TextView
+        android:id="@+id/btn_positive"
+        style="@style/Button.Primary"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_size_small"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/space_x3"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true"
+        tools:text="OK" />
+
+    </LinearLayout>
+
+  </LinearLayout>
+</layout>

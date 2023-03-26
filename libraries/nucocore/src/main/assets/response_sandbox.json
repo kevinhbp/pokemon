@@ -1,0 +1,95 @@
+{
+  "status": true,
+  "code": 200,
+  "message": "Request Success",
+  "data": [
+    {
+      "id": 1,
+      "code": "EP1001AA-GH1T1AB1",
+      "alias": "",
+      "location_gh": 1,
+      "location_sandbed": "A",
+      "location_box": 1
+    },
+    {
+      "id": 2,
+      "code": "EP1002AA-GH11SAB1",
+      "alias": "",
+      "location_gh": 1,
+      "location_sandbed": "A",
+      "location_box": 1
+    },
+    {
+      "id": 3,
+      "code": "EP1003AA-GH11SAB1",
+      "alias": "",
+      "location_gh": 1,
+      "location_sandbed": "A",
+      "location_box": 1
+    },
+    {
+      "id": 4,
+      "code": "EP1004AA-GH11SAB1",
+      "alias": "",
+      "location_gh": 1,
+      "location_sandbed": "A",
+      "location_box": 1
+    },
+    {
+      "id": 5,
+      "code": "EP1005AA-GH11SAB1",
+      "alias": "",
+      "location_gh": 1,
+      "location_sandbed": "A",
+      "location_box": 1
+    },
+    {
+      "id": 11,
+      "code": "AC1001AA-GH1T1BB1",
+      "alias": "",
+      "location_gh": 1,
+      "location_sandbed": "B",
+      "location_box": 1
+    },
+    {
+      "id": 12,
+      "code": "AC1002AA-GH11SCB1",
+      "alias": "",
+      "location_gh": 1,
+      "location_sandbed": "C",
+      "location_box": 1
+    },
+    {
+      "id": 13,
+      "code": "AC1003AA-GH11SDB1",
+      "alias": "",
+      "location_gh": 1,
+      "location_sandbed": "D",
+      "location_box": 1
+    },
+    {
+      "id": 14,
+      "code": "AC1004AA-GH11SEB1",
+      "alias": "",
+      "location_gh": 1,
+      "location_sandbed": "E",
+      "location_box": 1
+    },
+    {
+      "id": 15,
+      "code": "AC1005AA-GH11SFB1",
+      "alias": "",
+      "location_gh": 1,
+      "location_sandbed": "F",
+      "location_box": 1
+    },
+    {
+      "id": 16,
+      "code": "AC1006AA-GH11SGB1",
+      "alias": "",
+      "location_gh": 1,
+      "location_sandbed": "G",
+      "location_box": 1
+    }
+  ]
+}

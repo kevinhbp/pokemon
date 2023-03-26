@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="model"
+      type="id.co.app.nucocore.domain.entities.view.SelectionDate" />
+  </data>
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/calendar_height"
+      android:layout_marginHorizontal="@dimen/space_x1"
+      android:layout_marginVertical="@dimen/space_1dp"
+      app:cardBackgroundColor="@color/nuco_white"
+      app:cardCornerRadius="@dimen/radius_card_small"
+      app:cardElevation="0dp">
+
+      <CalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    </androidx.cardview.widget.CardView>
+
+  </FrameLayout>
+
+</layout>

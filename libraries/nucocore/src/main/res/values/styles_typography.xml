@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- Level 0 : Non Use-able -->
+  <style name="Typography">
+    <item name="android:textColor">@color/color_text_black_1</item>
+    <item name="android:textSize">@dimen/text_body_moderate</item>
+    <item name="android:fontFamily">@font/maisonneue_ext_book</item>
+    <item name="android:includeFontPadding">true</item>
+    <item name="android:gravity">start|center_vertical</item>
+  </style>
+
+  <style name="Typography.Demi" parent="Typography">
+    <item name="android:fontFamily">@font/maisonneue_ext_demi</item>
+  </style>
+
+  <style name="Typography.Bold" parent="Typography">
+    <item name="android:fontFamily">@font/maisonneue_ext_bold</item>
+  </style>
+
+  <!-- Level 1: Headline -->
+  <style name="Headline.Hero" parent="Typography.Bold">
+    <item name="android:textSize">@dimen/text_headline_hero</item>
+  </style>
+
+  <style name="Headline.ExtraLarge" parent="Typography.Bold">
+    <item name="android:textSize">@dimen/text_headline_extra_large</item>
+  </style>
+
+  <style name="Headline.Large" parent="Typography.Bold">
+    <item name="android:textSize">@dimen/text_headline_large</item>
+  </style>
+
+  <style name="Headline.Moderate" parent="Typography.Bold">
+    <item name="android:textSize">@dimen/text_headline_moderate</item>
+  </style>
+
+  <style name="Headline.Moderate.Demi" parent="Typography.Demi">
+    <item name="android:textSize">@dimen/text_headline_moderate</item>
+  </style>
+
+  <style name="Headline.Small" parent="Typography.Bold">
+    <item name="android:textSize">@dimen/text_headline_small</item>
+  </style>
+
+  <style name="Headline.Small.Demi" parent="Typography.Demi">
+    <item name="android:textSize">@dimen/text_headline_small</item>
+  </style>
+
+  <style name="Headline.Tiny" parent="Typography.Bold">
+    <item name="android:textSize">@dimen/text_headline_tiny</item>
+  </style>
+
+  <style name="Headline.Tiny.Demi" parent="Typography.Demi">
+    <item name="android:textSize">@dimen/text_headline_tiny</item>
+  </style>
+
+  <!-- Level 2: Body -->
+  <style name="Body.Moderate" parent="Typography">
+    <item name="android:textSize">@dimen/text_body_moderate</item>
+  </style>
+
+  <style name="Body.Small" parent="Typography">
+    <item name="android:textSize">@dimen/text_body_small</item>
+  </style>
+
+  <!-- Level 3: Caption -->
+  <style name="Caption.Moderate.Book" parent="Typography">
+    <item name="android:textSize">@dimen/text_caption_moderate</item>
+  </style>
+
+  <style name="Caption.Moderate.Demi" parent="Typography.Demi">
+    <item name="android:textSize">@dimen/text_caption_moderate</item>
+  </style>
+
+  <style name="Caption.Small.Book" parent="Typography">
+    <item name="android:textSize">@dimen/text_caption_small</item>
+  </style>
+
+  <style name="Caption.Small.Demi" parent="Typography.Demi">
+    <item name="android:textSize">@dimen/text_caption_small</item>
+  </style>
+
+  <style name="MenuText" parent="Headline.Small.Demi">
+    <item name="android:textColor">@color/color_menu_text</item>
+  </style>
+</resources>

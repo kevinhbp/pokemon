@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="model"
+      type="id.co.app.nucocore.domain.entities.row.SelectorSwitchModel" />
+  </data>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/button_size_large"
+    android:layout_marginHorizontal="@dimen/space_x2"
+    android:layout_marginVertical="@dimen/space_x1"
+    android:background="@drawable/bg_item_card_information"
+    android:orientation="horizontal">
+
+    <TextView
+      style="@style/Headline.Small"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginStart="@dimen/space_x3"
+      android:gravity="center|start"
+      android:text="@{model.label}"
+      tools:text="@string/mulai_assessment" />
+
+    <View
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1" />
+
+    <id.co.app.nucocore.components.switchPillsBar.SwitchPillsBar
+      android:id="@+id/switch_page"
+      android:layout_width="wrap_content"
+      android:layout_height="@dimen/button_size_moderate"
+      android:layout_gravity="center"
+      android:layout_marginEnd="@dimen/space_x3"
+      android:layout_marginVertical="@dimen/space_x1"
+      app:switch_activeTextColor="@color/color_text_purple_1"
+      app:switch_backgroundColor="@color/nuco_purple_6"
+      app:switch_pillsColor="@color/nuco_purple_7"
+      app:switch_textColor="@color/color_text_purple_0"
+      tools:switch_label1="@string/depan"
+      tools:switch_label2="@string/belakang" />
+
+  </LinearLayout>
+
+</layout>

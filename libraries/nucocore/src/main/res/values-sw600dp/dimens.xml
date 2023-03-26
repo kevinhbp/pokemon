@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- Splash -->
+  <dimen name="splash_logo_height">60dp</dimen>
+
+  <!-- Toolbar -->
+  <dimen name="toolbar_elevation">8dp</dimen>
+  <dimen name="action_bar_height">80dp</dimen>
+  <dimen name="search_bar_height">50dp</dimen>
+
+  <!-- PND -->
+  <dimen name="pnd_card_height">180dp</dimen>
+  <dimen name="pnd_card_text_wrap_height">56dp</dimen>
+  <dimen name="pnd_top_content_space">166dp</dimen>
+  <dimen name="pnd_image_height">400dp</dimen>
+  <dimen name="pnd_title_height">40dp</dimen>
+
+  <!-- NA -->
+  <dimen name="na_card_height">80dp</dimen>
+  <dimen name="code_circle_wrapper_height">60dp</dimen>
+  <dimen name="code_circle_height">50dp</dimen>
+  <dimen name="na_chart_wrapper_width">330dp</dimen>
+  <dimen name="na_chart_wrapper_height">160dp</dimen>
+  <dimen name="na_chart_view_width">160dp</dimen>
+  <dimen name="na_bar_wrapper_height">30dp</dimen>
+  <dimen name="progress_indicator_height_small">20dp</dimen>
+  <dimen name="na_chart_top_space">24dp</dimen>
+
+  <!-- DP -->
+  <dimen name="dp_top_content_space">110dp</dimen>
+  <dimen name="dp_card_width">200dp</dimen>
+  <dimen name="dp_card_height">100dp</dimen>
+  <dimen name="dp_card_title_height">34dp</dimen>
+  <dimen name="dp_track_size">8dp</dimen>
+  <dimen name="dp_circle_size">85dp</dimen>
+
+  <!-- Empty State -->
+  <dimen name="empty_state_image_size">300dp</dimen>
+  <dimen name="empty_state_max_width">600dp</dimen>
+
+  <!-- Profile -->
+  <dimen name="profile_item_height">80dp</dimen>
+
+  <!-- Bottom Nav Bar -->
+  <dimen name="bottom_nav_bar_height">70dp</dimen>
+
+  <!-- Home -->
+  <dimen name="home_widget_card_height">100dp</dimen>
+  <dimen name="home_widget_card_image_height">80dp</dimen>
+  <dimen name="home_activity_card_height">80dp</dimen>
+
+  <!-- Others / Contents -->
+  <dimen name="logo_mini_width">150dp</dimen>
+
+  <!-- Setting -->
+  <dimen name="setting_env_item_size">100dp</dimen>
+  <dimen name="setting_env_rv_height">116dp</dimen>
+
+  <!-- Species Select -->
+  <dimen name="ss_height">70dp</dimen>
+
+  <!-- Area Select -->
+  <dimen name="as_height">120dp</dimen>
+  <dimen name="as_card_width">180dp</dimen>
+
+  <!-- HPT Edit -->
+  <dimen name="hpt_counter_height">60dp</dimen>
+  <dimen name="count_pill_width">150dp</dimen>
+  <dimen name="count_pill_height">42dp</dimen>
+
+  <!-- Qty Input -->
+  <dimen name="qty_input_width">135dp</dimen>
+</resources>
