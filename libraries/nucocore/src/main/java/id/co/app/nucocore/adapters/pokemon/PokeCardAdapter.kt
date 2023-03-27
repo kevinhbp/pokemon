@@ -11,6 +11,7 @@ import id.co.app.nucocore.base.adapterdelegate.DelegateAdapterItem
 import id.co.app.nucocore.binding.ViewBinding
 import id.co.app.nucocore.databinding.ItemPokemonCardBinding
 import id.co.app.nucocore.databinding.ItemPokemonTypeBinding
+import id.co.app.nucocore.domain.entities.pokemon.Pokemon
 import id.co.app.nucocore.domain.entities.view.ActionButtonModel
 import id.co.app.nucocore.domain.entities.view.PokeCardModel
 import id.co.app.nucocore.domain.entities.view.PokeTypeModel
@@ -18,6 +19,7 @@ import id.co.app.nucocore.domain.repository.MainRepository
 import id.co.app.nucocore.extension.pokemon.*
 
 class PokeCardAdapter(
+  private val loadDetail: (name: String, onResult: (Pokemon) -> Unit) -> Unit,
   private val clickListener: (ActionButtonModel) -> Unit
 ) : DelegateAdapter<PokeCardModel, PokeCardAdapter.PokeCardViewHolder>(
   PokeCardModel::class.java

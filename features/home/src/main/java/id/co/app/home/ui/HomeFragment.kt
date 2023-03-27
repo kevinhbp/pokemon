@@ -25,7 +25,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
       .add(SpaceAdapter())
       .add(DefaultEmptyStateAdapter { })
       .add(PokeHeaderAdapter())
-      .add(PokeCardAdapter { })
+      .add(PokeCardAdapter({ key, onLoad ->
+        homeViewModel.loadDetail(key, onLoad)
+      }, {
+
+      }))
       .build()
   }
 
@@ -36,7 +40,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
   override fun setupView() {
     binding.viewModel = homeViewModel
-    homeViewModel.setTopSpace(requireActivity().resources.getDimension(R.dimen.action_bar_height).toInt().toDp())
+    homeViewModel.setTopSpace(
+      requireActivity().resources.getDimension(R.dimen.action_bar_height).toInt().toDp()
+    )
     setupRecyclerView()
   }
 
@@ -57,21 +63,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
   }
 
   ///
-  private val paginationListener by lazy {
-    RecyclerViewPagination(
-      recyclerView = binding.rvContent,
-      isLoading = {
-        homeViewModel.loading.value ?: false
-      },
-      loadMore = {
-        homeViewModel.loadContent()
-      },
-      onLast = { false }
-    ).apply {
-      threshold = 2
-    }
-  }
-
   private fun setupRecyclerView() {
     val mRv = binding.rvContent
     val mSr = binding.srContent
@@ -79,10 +70,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     mRv.apply {
       adapter = mAdapter
       layoutManager = mLayoutManager
-      addOnScrollListener(paginationListener)
     }
     mSr.setOnRefreshListener {
-      paginationListener.resetCurrentPage()
       homeViewModel.resetPage()
       homeViewModel.loadContent()
     }

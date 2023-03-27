@@ -47,12 +47,8 @@ class MainRepository(
         result.add(PokeHeaderModel(data.count))
       }
       data.results.forEach { poke ->
-        val pokeDetail = mainClient.getPokemonDetail(poke.name)
         val types = arrayListOf<String>()
-        pokeDetail.types.forEach { type ->
-          types.add(type.type.name)
-        }
-        result.add(PokeCardModel(pokeDetail.id, pokeDetail.name, types))
+        result.add(PokeCardModel(0, poke.name, types))
       }
       emit(Result.Success(result))
     } catch (e: Exception) {
@@ -60,25 +56,14 @@ class MainRepository(
     }
   }
 
-  fun getPokemonListBetter(): Flow<Result<List<DelegateAdapterItem>>> = flow {
+  fun getPokemonDetail(key: String): Flow<Result<Pokemon>> = flow {
     emit(Result.Loading)
-    val newModels: ArrayList<DelegateAdapterItem> = arrayListOf()
     try {
-      val data = mainClient.getPokemonList(getOffset(), loadLimit)
-      nextPageKey += 1
-      if (getCurrentPage() == 1) {
-        newModels.add(SpaceModel(topSpace))
-        newModels.add(PokeHeaderModel(data.count))
-      }
-      data.results.forEach { poke ->
-        val det = mainClient.getPokemonDetail(poke.name)
-        val pTypes : ArrayList<String> = arrayListOf()
-        det.types.forEach { pTypes.add(it.type.name) }
-        newModels.add(PokeCardModel(det.id, poke.name, pTypes))
-      }
-      emit(Result.Success(newModels))
+      val result = mainClient.getPokemonDetail(key)
+      emit(Result.Success(result))
     } catch (e: Exception) {
       emit(Result.Failure(e))
     }
   }
+
 }
