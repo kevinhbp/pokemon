@@ -1,10 +1,10 @@
-# nursery_console
+# the_pokedex
 
-R&D Nursery Application
+Pokémon Encyclopedia as Android Application for technical showcase.
 
 ## Version
 
-- 2022-12-16 09:26 : V1.00 (100000)
+- 2023-03-27 08:26 : V1.00 (100000)
 
 
 ## Contributing Guideline
@@ -14,4 +14,4 @@ R&D Nursery Application
 
 ## Copyright
 
-&copy; 2022 Kevin Putro for Asia Pulp & Paper
+&copy; 2023 Kevin Putro.
