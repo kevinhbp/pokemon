@@ -21,4 +21,5 @@
 
   <dimen name="content_horizontal_lv1" category="content">8dp</dimen>
   <dimen name="content_horizontal_lv2" category="content">16dp</dimen>
+  <dimen name="content_horizontal_lv3" category="content">24dp</dimen>
 </resources>

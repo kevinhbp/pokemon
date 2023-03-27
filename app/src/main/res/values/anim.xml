@@ -4,5 +4,5 @@
 <resources>
 
     <!-- Duration (in milliseconds) for slide transition animation -->
-    <integer name="slide">200</integer>
+    <integer name="slide">400</integer>
 </resources>

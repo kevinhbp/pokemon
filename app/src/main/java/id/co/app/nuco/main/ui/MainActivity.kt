@@ -20,7 +20,6 @@ import id.co.app.nuco.R.string
 import id.co.app.nuco.databinding.ActivityMainBinding
 import id.co.app.nuco.main.viewModels.MainState
 import id.co.app.nuco.main.viewModels.MainViewModel
-import id.co.app.nuco.splash.ui.SplashFragmentDirections
 import id.co.app.nucocore.R
 import id.co.app.nucocore.components.blocker.BlockerViewModel
 import id.co.app.nucocore.deeplink.InternalDeepLink
@@ -28,6 +27,7 @@ import id.co.app.nucocore.domain.entities.row.BlockerDefaultModel
 import id.co.app.nucocore.domain.entities.row.BlockerDefaultModel.Companion.getInvalidConnectionBlocker
 import id.co.app.nucocore.extension.makeStatusBarTransparent
 import id.co.app.nucocore.extension.showToastInfo
+import id.co.app.nucocore.extension.showToastNormal
 import id.co.app.nucocore.navigation.MainActNavi
 import id.co.app.nucocore.singleton.LOG_TAG
 import id.co.app.nucocore.singleton.ViewSingleton
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity(), MainActNavi {
     if (onDefaultPage()) {
       if (onDestinationDefault() && !doubleBackToExitPressedOnce) {
         doubleBackToExitPressedOnce = true
-        showToastInfo(getString(string.exit_confirm), Toast.LENGTH_LONG)
+        showToastNormal(getString(string.exit_confirm), Toast.LENGTH_LONG)
         Handler(Looper.getMainLooper()).postDelayed(rollbackPressedOnce, 2000)
         return
       }
@@ -113,9 +113,7 @@ class MainActivity : AppCompatActivity(), MainActNavi {
 
   private fun onOverrideBackPressedPage(): Boolean {
     val nav = getNavController()
-    val fragmentList = listOf(
-      id.pnd_fragment, id.na_fragment, id.dp_fragment, id.so_fragment
-    )
+    val fragmentList = listOf<Int>()
     val destinationId = nav.currentBackStackEntry?.destination?.id ?: -1
     return fragmentList.contains(destinationId)
   }
@@ -127,12 +125,6 @@ class MainActivity : AppCompatActivity(), MainActNavi {
     return nav.navigateUp()
   }
 
-  // --
-  override fun navigateSplashToHome() {
-    Log.d(LOG_TAG, "navigate: Splash to Home")
-    getNavController()
-      .navigate(SplashFragmentDirections.actionSplashScreenToHome())
-  }
   // --
   private fun setupView() {
     binding.blockerViewModel = blockerViewModel
@@ -148,7 +140,7 @@ class MainActivity : AppCompatActivity(), MainActNavi {
           showBlockerView(getInvalidConnectionBlocker())
         }
         MainState.REDIRECT_HOME -> {
-          navigateSplashToHome()
+
         }
         else -> { /* not used at the moment.. */
         }
@@ -162,10 +154,6 @@ class MainActivity : AppCompatActivity(), MainActNavi {
   }
 
   // --
-  override fun doSplashCheck() {
-    viewModel.splashAccessCheckup("")
-  }
-
   override fun showActionBar(show: Boolean) {
 
   }
@@ -175,10 +163,6 @@ class MainActivity : AppCompatActivity(), MainActNavi {
   }
 
   private fun onTargetChanged(it: String) {
-    if (it == InternalDeepLink.RE_CONNECT) {
-      doSplashCheck()
-      return
-    }
     if (it == InternalDeepLink.EXIT) {
       finishAffinity()
       return

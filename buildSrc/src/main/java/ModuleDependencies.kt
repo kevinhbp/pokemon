@@ -10,12 +10,12 @@ object ModuleDependencies {
 
 
 		const val HOME = "$FEATURES:home"
-		const val PROFILE = "$FEATURES:profile"
+		const val DETAIL = "$FEATURES:detail"
 	}
 
 	val features = arrayListOf<String>().apply {
 		add(Features.HOME)
-		add(Features.PROFILE)
+		add(Features.DETAIL)
 	}
 	val libraries = arrayListOf<String>().apply {
 		add(Libraries.CORE)

@@ -7,8 +7,8 @@ class ViewSingleton {
 
   val navOptions: NavOptions by lazy {
     NavOptions.Builder()
-      .setEnterAnim(R.anim.slide_in_right)
-      .setExitAnim(R.anim.slide_out_left)
+      .setEnterAnim(R.anim.slide_in_bottom)
+      .setExitAnim(R.anim.slide_out_top)
       .setPopEnterAnim(R.anim.slide_in_left)
       .setPopExitAnim(R.anim.slide_out_right)
       .build()

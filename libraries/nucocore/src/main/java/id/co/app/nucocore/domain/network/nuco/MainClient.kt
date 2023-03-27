@@ -2,6 +2,7 @@ package id.co.app.nucocore.domain.network.nuco
 
 import id.co.app.nucocore.domain.entities.pokemon.PokeResult
 import id.co.app.nucocore.domain.entities.pokemon.Pokemon
+import id.co.app.nucocore.domain.entities.pokemon.PokemonList
 import id.co.app.nucocore.domain.network.EnvironmentCode
 import id.co.app.nucocore.singleton.DataSingleton
 
@@ -15,8 +16,8 @@ class MainClient(private val production: MainService, private val staging: MainS
     }
   }
 
-  override suspend fun getPokemonList(offset: Int, limit: Int): List<PokeResult> {
-    return getService().getPokemonList(offset, limit).results
+  override suspend fun getPokemonList(offset: Int, limit: Int): PokemonList {
+    return getService().getPokemonList(offset, limit)
   }
 
   override suspend fun getPokemonDetail(id: Any): Pokemon {

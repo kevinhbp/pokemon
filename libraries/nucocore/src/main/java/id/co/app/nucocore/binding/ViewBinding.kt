@@ -54,7 +54,7 @@ object ViewBinding {
   @BindingAdapter("titleText")
   fun bindTitleText(view: TextView, value: String?) {
     if (value == null) return
-    view.text = value.capitalize(Locale.ROOT)
+    view.text = value.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
   }
 
   @JvmStatic

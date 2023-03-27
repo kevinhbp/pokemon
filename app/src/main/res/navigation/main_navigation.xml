@@ -11,48 +11,9 @@
     android:name="id.co.app.nuco.splash.ui.SplashFragment"
     android:label="splash"
     tools:layout="@layout/fragment_splash">
-
-    <action
-      android:id="@+id/action_splash_screen_to_login"
-      app:destination="@id/login_fragment"
-      app:enterAnim="@anim/slide_in_right"
-      app:exitAnim="@anim/slide_out_left"
-      app:popEnterAnim="@anim/slide_in_left"
-      app:popExitAnim="@anim/slide_out_right"
-      app:popUpTo="@id/splash_fragment"
-      app:popUpToInclusive="true" />
-
-    <action
-      android:id="@+id/action_splash_screen_to_home"
-      app:destination="@id/home_fragment"
-      app:enterAnim="@anim/slide_in_right"
-      app:exitAnim="@anim/slide_out_left"
-      app:popEnterAnim="@anim/slide_in_left"
-      app:popExitAnim="@anim/slide_out_right"
-      app:popUpTo="@id/splash_fragment"
-      app:popUpToInclusive="true" />
-
+    <deepLink app:uri="nuco://splash" />
   </fragment>
 
-  <fragment
-    android:id="@+id/login_fragment"
-    android:name="id.co.app.nuco.login.ui.LoginFragment"
-    android:label="login"
-    tools:layout="@layout/fragment_login">
-
-    <action
-      android:id="@+id/action_login_screen_to_home"
-      app:destination="@id/home_fragment"
-      app:enterAnim="@anim/slide_in_right"
-      app:exitAnim="@anim/slide_out_left"
-      app:popEnterAnim="@anim/slide_in_left"
-      app:popExitAnim="@anim/slide_out_right"
-      app:popUpTo="@id/login_fragment"
-      app:popUpToInclusive="true" />
-
-  </fragment>
-
-  <!-- __ -->
   <fragment
     android:id="@+id/home_fragment"
     android:name="id.co.app.home.ui.HomeFragment"
@@ -62,75 +23,11 @@
   </fragment>
 
   <fragment
-    android:id="@+id/pnd_fragment"
-    android:name="id.co.app.pnd.ui.PndFragment"
-    android:label="pnd"
-    tools:layout="@layout/fragment_pnd">
-    <deepLink app:uri="nuco://pnd" />
-  </fragment>
-
-  <fragment
-    android:id="@+id/na_fragment"
-    android:name="id.co.app.nurseryassessment.ui.NaFragment"
-    android:label="na"
-    tools:layout="@layout/fragment_na">
-    <deepLink app:uri="nuco://na" />
-  </fragment>
-
-  <fragment
-    android:id="@+id/so_fragment"
-    android:name="id.co.app.stockassessment.ui.SoFragment"
-    android:label="so"
-    tools:layout="@layout/fragment_so">
-    <deepLink app:uri="nuco://so" />
-  </fragment>
-
-  <fragment
-    android:id="@+id/dp_fragment"
-    android:name="id.co.app.dailyprogress.ui.DpFragment"
-    android:label="dp"
-    tools:layout="@layout/fragment_dp">
-    <deepLink app:uri="nuco://dp" />
-  </fragment>
-
-
-  <fragment
     android:id="@+id/profile_fragment"
-    android:name="id.co.app.profile.ui.ProfileFragment"
+    android:name="id.co.app.detail.ui.DetailFragment"
     android:label="profile"
-    tools:layout="@layout/fragment_profile">
-    <deepLink app:uri="nuco://profile" />
-
-    <action
-      android:id="@+id/action_profile_screen_to_splash"
-      app:destination="@id/splash_fragment"
-      app:enterAnim="@anim/slide_in_right"
-      app:exitAnim="@anim/slide_out_left"
-      app:popEnterAnim="@anim/slide_in_left"
-      app:popExitAnim="@anim/slide_out_right"
-      app:popUpTo="@id/profile_fragment"
-      app:popUpToInclusive="true" />
-  </fragment>
-
-  <fragment
-    android:id="@+id/synchro_fragment"
-    android:name="id.co.app.synchro.ui.SynchroFragment"
-    android:label="data-sync"
-    tools:layout="@layout/fragment_synchro">
-    <argument
-      android:name="autoSync"
-      android:defaultValue=""
-      app:argType="string" />
-
-    <deepLink app:uri="nuco://data-sync?autoSync={autoSync}" />
-  </fragment>
-
-  <fragment
-    android:id="@+id/settings_fragment"
-    android:name="id.co.app.setting.ui.SettingsFragment"
-    android:label="settings"
-    tools:layout="@layout/fragment_settings">
-    <deepLink app:uri="nuco://settings" />
+    tools:layout="@layout/fragment_detail">
+    <deepLink app:uri="nuco://detail" />
   </fragment>
 
 </navigation>

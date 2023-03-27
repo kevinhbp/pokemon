@@ -6,6 +6,7 @@ import id.co.app.nucocore.domain.network.nuco.MainClient
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import id.co.app.nucocore.base.Result
+import id.co.app.nucocore.domain.entities.pokemon.PokemonList
 
 @Suppress("MemberVisibilityCanBePrivate", "unused")
 class MainRepository(
@@ -28,7 +29,7 @@ class MainRepository(
     getPokemonList()
   }
 
-  fun getPokemonList(): Flow<Result<List<PokeResult>>> = flow {
+  fun getPokemonList(): Flow<Result<PokemonList>> = flow {
     emit(Result.Loading)
     try {
       val data = mainClient.getPokemonList(getOffset(), loadLimit)

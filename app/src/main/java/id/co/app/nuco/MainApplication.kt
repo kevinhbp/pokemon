@@ -10,7 +10,7 @@ import id.co.app.nucocore.di.InjectionModule
 import id.co.app.nucocore.domain.entities.master.Header
 import id.co.app.nucocore.singleton.HeaderSingleton
 import id.co.app.nucocore.singleton.LOG_TAG
-import id.co.app.profile.viewModels.ProfileViewModel
+import id.co.app.detail.viewModels.DetailViewModel
 import id.co.app.session.UserSessionModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -68,6 +68,6 @@ class MainApplication : MultiDexApplication() {
 
     viewModel { HomeViewModel(get()) }
 
-    viewModel { ProfileViewModel(get()) }
+    viewModel { DetailViewModel(get()) }
   }
 }
