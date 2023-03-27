@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.co.app.home.databinding.FragmentHomeBinding
 import id.co.app.home.viewModels.HomeViewModel
+import id.co.app.nucocore.R
 import id.co.app.nucocore.adapters.DefaultEmptyStateAdapter
 import id.co.app.nucocore.adapters.SpaceAdapter
 import id.co.app.nucocore.adapters.pokemon.PokeCardAdapter
@@ -11,6 +12,7 @@ import id.co.app.nucocore.adapters.pokemon.PokeHeaderAdapter
 import id.co.app.nucocore.base.BaseFragment
 import id.co.app.nucocore.base.adapterdelegate.CompositeAdapter
 import id.co.app.nucocore.components.dialog.showLoadingDialog
+import id.co.app.nucocore.extension.toDp
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -33,6 +35,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
   override fun setupView() {
     binding.viewModel = homeViewModel
+    homeViewModel.topSpace = requireActivity().resources.getDimension(R.dimen.action_bar_height).toInt().toDp()
     setupRecyclerView()
   }
 

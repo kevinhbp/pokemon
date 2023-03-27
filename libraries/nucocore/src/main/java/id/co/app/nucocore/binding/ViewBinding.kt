@@ -72,6 +72,20 @@ object ViewBinding {
   }
 
   @JvmStatic
+  @BindingAdapter("imageFromUrlCenterInside")
+  fun bindImageFromUrlCenterInside(view: ImageView, imageUrl: String?) {
+    if (!imageUrl.isNullOrEmpty()) {
+
+      Glide.with(view.context)
+        .load(imageUrl)
+        .placeholder(shimmerDrawable)
+        .transition(withCrossFade(factory))
+        .centerInside()
+        .into(view)
+    }
+  }
+
+  @JvmStatic
   @BindingAdapter("imageFromDrawable")
   fun bindImageFromDrawable(view: ImageView, drawable: Drawable?) {
     if (drawable != null) {

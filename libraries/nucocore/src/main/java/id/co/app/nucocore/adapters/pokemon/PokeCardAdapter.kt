@@ -57,7 +57,8 @@ class PokeCardAdapter(
       val number = data.pokeId.formatId()
       val name = data.pokeName.formatName()
 
-      ViewBinding.bindImageFromUrl(imagePhotoView, photoUrl)
+      ViewBinding.bindImageFromUrlCenterInside(imagePhotoView, photoUrl)
+
       textNumber.text = number
       textName.text = name
 

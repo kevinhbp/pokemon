@@ -11,10 +11,7 @@ import id.co.app.nucocore.domain.entities.row.SpaceModel
 import id.co.app.nucocore.domain.entities.view.PokeCardModel
 import id.co.app.nucocore.domain.entities.view.PokeHeaderModel
 import id.co.app.nucocore.domain.repository.MainRepository
-import id.co.app.nucocore.extension.onFailure
-import id.co.app.nucocore.extension.onLoading
-import id.co.app.nucocore.extension.onSuccess
-import id.co.app.nucocore.extension.toPx
+import id.co.app.nucocore.extension.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
@@ -27,6 +24,8 @@ class HomeViewModel(private val mainRepository: MainRepository) : ViewModel() {
 
   private val _loading = MutableLiveData(false)
   val loading: LiveData<Boolean> get() = _loading
+
+  var topSpace : Int = 80.toDp()
 
   // --
   fun loadContent() {
@@ -53,6 +52,7 @@ class HomeViewModel(private val mainRepository: MainRepository) : ViewModel() {
   private fun mapPage(response: PokemonList, firstPage: Boolean): List<DelegateAdapterItem> {
     val result = ArrayList<DelegateAdapterItem>()
     if (firstPage) {
+      result.add(SpaceModel(topSpace))
       result.add(createHeader(response.count))
     }
     response.results.forEach { poke ->
