@@ -83,7 +83,7 @@
 
   <style name="MenuText" parent="Headline.Small.Demi">
     <item name="android:textColor">@color/color_menu_text</item>
-    <item name="android:background">@drawable/bg_ripple_button</item>
+    <item name="android:background">@drawable/bg_ripple_card</item>
     <item name="android:clickable">true</item>
     <item name="android:focusable">true</item>
   </style>
