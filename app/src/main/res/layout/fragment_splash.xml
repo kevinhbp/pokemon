@@ -1,77 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
+  <data>
 
-        <variable
-            name="model"
-            type="id.co.app.nuco.splash.model.SplashModel" />
-    </data>
+    <variable
+      name="model"
+      type="id.co.app.nuco.splash.model.SplashModel" />
+  </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/image_pokemon"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginTop="@dimen/action_bar_height"
+      android:scaleType="centerInside"
+      app:layout_constraintBottom_toTopOf="@+id/text_welcome_title"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/illustration_pokemon_inframe" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_welcome_title"
+      style="@style/Headline.Hero"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="@dimen/content_horizontal_lv2"
+      android:layout_marginBottom="@dimen/space_x4"
+      android:text="@string/welcome_message"
+      android:textColor="@color/color_on_background"
+      app:layout_constraintBottom_toTopOf="@+id/text_welcome_description"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_welcome_description"
+      style="@style/Headline.Small.Demi"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="@dimen/content_horizontal_lv2"
+      android:layout_marginTop="@dimen/space_x2"
+      android:layout_marginBottom="@dimen/space_x10"
+      android:text="@string/welcome_description"
+      android:textColor="@color/color_on_surface"
+      app:layout_constraintBottom_toTopOf="@+id/button_pokedex"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+      android:id="@+id/button_pokedex"
+      style="@style/Button.Primary"
+      android:layout_width="@dimen/button_width_large"
+      android:layout_marginHorizontal="@dimen/content_horizontal_lv2"
+      android:layout_marginBottom="@dimen/space_x10"
+      android:text="@string/check_pokedex"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+      android:id="@+id/wrapper_action_bar"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <View
+        android:id="@+id/shadow_action_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:visibility="gone"
+        android:background="@drawable/bg_top_menu_shadow" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+      <include
+        android:id="@+id/action_bar_view"
+        layout="@layout/action_bar_default" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_pokemon"
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:scaleType="centerInside"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/illustration_pokemon_inframe" />
+    </FrameLayout>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Headline.Hero"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_x10"
-                android:text="@string/welcome_message"
-                android:textColor="@color/color_on_background" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Headline.Small.Demi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_x10"
-                android:layout_marginTop="@dimen/space_x4"
-                android:text="@string/welcome_description"
-                android:textColor="@color/color_on_surface" />
-
-            <TextView
-                android:id="@+id/button_pokedex"
-                style="@style/Button.Primary"
-                android:layout_width="@dimen/button_width_large"
-                android:layout_marginHorizontal="@dimen/space_x10"
-                android:layout_marginTop="@dimen/space_x10"
-                android:text="@string/check_pokedex" />
-
-        </LinearLayout>
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <include layout="@layout/action_bar_default" />
-
-        </FrameLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

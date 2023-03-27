@@ -1,144 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/ab_default"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+      android:id="@+id/view_background_2"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:background="@drawable/bg_action_bar_level_2"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+      android:id="@+id/view_background"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:background="@drawable/bg_action_bar_default"
+      app:layout_constraintBottom_toBottomOf="@+id/wrapper_ab_lv1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+      android:id="@+id/space_subzero"
+      android:layout_width="0dp"
+      android:layout_height="@dimen/space_x6"
+      app:adaptHeightAsStatusBarSize="@{true}"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:layout_height="0dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ab_default"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+      android:id="@+id/wrapper_ab_lv2"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginTop="@dimen/space_x10"
+      android:clickable="true"
+      android:focusable="true"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/wrapper_ab_lv1"
+      tools:layout_height="@dimen/menu_height">
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <View
-            android:id="@+id/view_background_2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/bg_action_bar_level_2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/space_x10" />
 
         <View
-            android:id="@+id/view_background"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/bg_action_bar_default"
-            app:layout_constraintBottom_toBottomOf="@+id/wrapper_ab_lv1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/space_x4" />
+
+        <CheckedTextView
+          android:id="@+id/button_home"
+          style="@style/MenuText"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_marginHorizontal="@dimen/content_horizontal_lv1"
+          android:layout_weight="1"
+          android:checked="true"
+          android:paddingHorizontal="@dimen/content_horizontal_lv1"
+          android:text="@string/home" />
 
         <View
-            android:id="@+id/space_subzero"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/space_x6"
-            app:adaptHeightAsStatusBarSize="@{true}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_height="0dp" />
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/space_2dp"
+          android:layout_marginHorizontal="@dimen/content_horizontal_lv1"
+          android:background="@drawable/bg_line_default" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/wrapper_ab_lv2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_x10"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/wrapper_ab_lv1">
+        <CheckedTextView
+          android:id="@+id/button_type"
+          style="@style/MenuText"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_marginHorizontal="@dimen/content_horizontal_lv1"
+          android:layout_weight="1"
+          android:checked="false"
+          android:paddingHorizontal="@dimen/content_horizontal_lv1"
+          android:text="@string/pokemon_type" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_x6"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+        <View
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/space_x4" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_x4" />
-
-                <CheckedTextView
-                    android:id="@+id/button_home"
-                    style="@style/MenuText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/space_x2"
-                    android:paddingHorizontal="@dimen/space_x2"
-                    android:paddingVertical="@dimen/space_x3"
-                    android:checked="true"
-                    android:text="@string/home" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_2dp"
-                    android:layout_marginHorizontal="@dimen/space_x2"
-                    android:background="@drawable/bg_line_default"/>
-
-                <CheckedTextView
-                    android:id="@+id/button_type"
-                    style="@style/MenuText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/space_x2"
-                    android:paddingHorizontal="@dimen/space_x2"
-                    android:paddingVertical="@dimen/space_x3"
-                    android:checked="false"
-                    android:text="@string/pokemon_type" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_x4" />
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/wrapper_ab_lv1"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/action_bar_height"
-            android:paddingHorizontal="@dimen/space_x1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/space_subzero">
-
-            <FrameLayout
-                android:id="@+id/button_back"
-                android:layout_width="@dimen/button_size_moderate"
-                android:layout_height="@dimen/button_size_moderate"
-                android:background="@drawable/bg_ripple_bottom_nav_bar"
-                android:clickable="true"
-                android:focusable="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="@dimen/icon_large"
-                    android:layout_height="@dimen/icon_large"
-                    android:layout_gravity="center"
-                    android:tint="@color/nuco_gray_3"
-                    app:srcCompat="@drawable/ic_menu" />
-
-            </FrameLayout>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/logo_mini_width"
-                android:layout_height="0dp"
-                android:layout_marginStart="@dimen/space_x1"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_logo">
-
-            </androidx.appcompat.widget.AppCompatImageView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+      </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/wrapper_ab_lv1"
+      android:layout_width="0dp"
+      android:layout_height="@dimen/action_bar_height"
+      android:paddingHorizontal="@dimen/content_horizontal_lv1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/space_subzero">
+
+      <FrameLayout
+        android:id="@+id/button_menu"
+        android:layout_width="@dimen/button_size_moderate"
+        android:layout_height="@dimen/button_size_moderate"
+        android:layout_marginEnd="@dimen/content_horizontal_lv1"
+        android:background="@drawable/bg_ripple_bottom_nav_bar"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+          android:id="@+id/image_menu_icon"
+          android:layout_width="@dimen/icon_large"
+          android:layout_height="@dimen/icon_large"
+          android:layout_gravity="center"
+          android:tint="@color/nuco_gray_3"
+          app:srcCompat="@drawable/ic_menu" />
+
+      </FrameLayout>
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/logo_mini_width"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/content_horizontal_lv1"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo">
+
+      </androidx.appcompat.widget.AppCompatImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

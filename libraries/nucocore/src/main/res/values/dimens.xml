@@ -2,7 +2,7 @@
 <resources>
 
   <!-- Splash -->
-  <dimen name="splash_logo_height">40dp</dimen>
+  <dimen name="menu_height">160dp</dimen>
 
   <!-- Toolbar -->
   <dimen name="toolbar_elevation">8dp</dimen>

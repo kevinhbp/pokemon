@@ -18,4 +18,7 @@
 
 
   <dimen name="space_neg_x10" category="space-negative">-40dp</dimen>
+
+  <dimen name="content_horizontal_lv1" category="content">8dp</dimen>
+  <dimen name="content_horizontal_lv2" category="content">16dp</dimen>
 </resources>
