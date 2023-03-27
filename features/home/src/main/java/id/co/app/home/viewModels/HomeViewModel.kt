@@ -19,13 +19,17 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(private val mainRepository: MainRepository) : ViewModel() {
 
+  private val data = ArrayList<DelegateAdapterItem>()
+
   private val _contentData = MutableLiveData<MutableList<DelegateAdapterItem>>()
   val contentData: LiveData<MutableList<DelegateAdapterItem>> get() = _contentData
 
   private val _loading = MutableLiveData(false)
   val loading: LiveData<Boolean> get() = _loading
 
-  var topSpace : Int = 80.toDp()
+  fun setTopSpace(topSpace: Int) {
+    mainRepository.topSpace = topSpace
+  }
 
   // --
   fun loadContent() {
@@ -39,29 +43,10 @@ class HomeViewModel(private val mainRepository: MainRepository) : ViewModel() {
         }
         result.onSuccess {
           _loading.postValue(false)
-          val firstPage = mainRepository.getCurrentPage() == 1
-          val newList = mapPage(it, firstPage)
-          _contentData.postValue(newList.toMutableList())
+          data.add(it)
+          _contentData.postValue(data)
         }
       }
     }
   }
-
-
-  // --
-  private fun mapPage(response: PokemonList, firstPage: Boolean): List<DelegateAdapterItem> {
-    val result = ArrayList<DelegateAdapterItem>()
-    if (firstPage) {
-      result.add(SpaceModel(topSpace))
-      result.add(createHeader(response.count))
-    }
-    response.results.forEach { poke ->
-      result.add(createPokeCard(poke))
-    }
-    return result
-  }
-
-  private fun createHeader(count: Int): PokeHeaderModel = PokeHeaderModel(count)
-
-  private fun createPokeCard(model: PokeResult): PokeCardModel = PokeCardModel(0, model.name, listOf())
 }

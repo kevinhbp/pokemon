@@ -35,7 +35,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
   override fun setupView() {
     binding.viewModel = homeViewModel
-    homeViewModel.topSpace = requireActivity().resources.getDimension(R.dimen.action_bar_height).toInt().toDp()
+    homeViewModel.setTopSpace(requireActivity().resources.getDimension(R.dimen.action_bar_height).toInt().toDp())
     setupRecyclerView()
   }
 
