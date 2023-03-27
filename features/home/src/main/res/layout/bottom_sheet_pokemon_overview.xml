@@ -1,6 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/nuco_light_blue_1">
+
+        <View
+            android:id="@+id/view_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:background="@color/nuco_dialog_mask" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bs_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="@dimen/bs_peek_height"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            tools:layout_behavior="">
+
+            <View
+                android:id="@+id/space_subzero"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_x10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/space_builder"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_x1"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/wrapper_expanded_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space_subzero" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/wrapper_expanded_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:alpha="0"
+                android:background="@drawable/bg_bottom_sheet_default"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space_builder"
+                app:layout_constraintVertical_weight="5"
+                tools:alpha="1">
+
+                <View
+                    android:id="@+id/view_line"
+                    android:layout_width="@dimen/button_width_moderate"
+                    android:layout_height="@dimen/space_x1"
+                    android:layout_marginTop="@dimen/space_x6"
+                    android:background="@drawable/bg_line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_content"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/space_x6"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="@dimen/space_x3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+                <LinearLayout
+                    android:id="@+id/wrapper_bottom_action"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_bottom_sheet_default"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/space_x5"
+                    android:paddingTop="@dimen/space_x6"
+                    android:paddingBottom="@dimen/space_x2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:id="@+id/button_action"
+                        style="@style/Button.Tertiary"
+                        android:layout_width="match_parent"
+                        android:text="@string/more_detail" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

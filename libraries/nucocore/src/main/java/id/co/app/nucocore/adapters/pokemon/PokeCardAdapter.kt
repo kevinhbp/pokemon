@@ -19,7 +19,7 @@ import id.co.app.nucocore.domain.repository.MainRepository
 import id.co.app.nucocore.extension.pokemon.*
 
 class PokeCardAdapter(
-  private val clickListener: (ActionButtonModel) -> Unit
+  private val clickListener: (Pokemon) -> Unit
 ) : DelegateAdapter<PokeCardModel, PokeCardAdapter.PokeCardViewHolder>(
   PokeCardModel::class.java
 ) {
@@ -74,6 +74,11 @@ class PokeCardAdapter(
         typeList.add(PokeTypeModel(type))
       }
       mAdapter.submitList(typeList.toMutableList())
+
+
+      binding.buttonAction.setOnClickListener {
+        clickListener.invoke(data.pokemon)
+      }
     }
   }
 

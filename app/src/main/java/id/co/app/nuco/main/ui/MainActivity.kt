@@ -155,7 +155,8 @@ class MainActivity : AppCompatActivity(), MainActNavi {
 
   // --
   override fun showActionBar(show: Boolean) {
-
+    val view = binding.actionBarView.abDefault
+    view.visibility = if (show) View.VISIBLE else View.GONE
   }
 
   override fun showBlockerView(model: BlockerDefaultModel) {

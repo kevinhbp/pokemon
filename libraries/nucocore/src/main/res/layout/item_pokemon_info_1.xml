@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_name"
+            style="@style/Headline.Hero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/content_horizontal_lv2"
+            android:layout_marginTop="@dimen/space_x6"
+            android:gravity="center|start"
+            android:textColor="@color/color_on_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Pokemon Name" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_poke"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_large"
+            android:layout_marginHorizontal="@dimen/content_horizontal_lv2"
+            android:layout_marginTop="@dimen/space_x2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_weight"
+            style="@style/Headline.Moderate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/content_horizontal_lv2"
+            android:layout_marginTop="@dimen/space_x2"
+            android:gravity="center|start"
+            android:text="@string/weight_dd"
+            android:textColor="@color/color_on_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_poke" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_weight"
+            style="@style/Headline.Moderate.Demi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|start"
+            android:textColor="@color/color_on_surface"
+            app:layout_constraintStart_toStartOf="@+id/label_weight"
+            app:layout_constraintTop_toBottomOf="@+id/label_weight"
+            tools:text="1 Kg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_height"
+            style="@style/Headline.Moderate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_x2"
+            android:layout_marginEnd="@dimen/content_horizontal_lv2"
+            android:gravity="center|end"
+            android:text="@string/height_dd"
+            android:textColor="@color/color_on_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_poke" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_height"
+            style="@style/Headline.Moderate.Demi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|end"
+            android:textColor="@color/color_on_surface"
+            app:layout_constraintEnd_toEndOf="@+id/label_height"
+            app:layout_constraintTop_toBottomOf="@+id/label_height"
+            tools:text="1M" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_type"
+            style="@style/Headline.Moderate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/content_horizontal_lv2"
+            android:layout_marginTop="@dimen/space_x4"
+            android:gravity="center|start"
+            android:text="@string/type_dd"
+            android:textColor="@color/color_on_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_weight" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_types"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/tag_wrapper_height"
+            android:layout_marginHorizontal="@dimen/content_horizontal_lv2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_type" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_ability"
+            style="@style/Headline.Moderate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/content_horizontal_lv2"
+            android:layout_marginTop="@dimen/space_x4"
+            android:gravity="center|start"
+            android:text="@string/abilities_dd"
+            android:textColor="@color/color_on_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_types" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_abilities"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/abilities_height_wrapper"
+            android:layout_marginHorizontal="@dimen/content_horizontal_lv2"
+            android:layout_marginBottom="@dimen/space_x6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_ability" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

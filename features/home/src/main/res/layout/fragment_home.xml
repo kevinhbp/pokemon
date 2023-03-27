@@ -28,6 +28,10 @@
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+        <include
+            android:id="@+id/pokemon_overview"
+            layout="@layout/bottom_sheet_pokemon_overview" />
+
     </FrameLayout>
 
 </layout>

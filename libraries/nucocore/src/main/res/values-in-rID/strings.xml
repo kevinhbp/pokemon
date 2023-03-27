@@ -20,4 +20,6 @@
     <string name="welcome_message">Semua data Pokémon yang Anda perlukan di satu tempat!</string>
     <string name="welcome_description">Ribuan data disusun di satu tempat</string>
     <string name="pokemon_type">Tipe Pokémon</string>
+
+    <string name="more_detail">Lebih banyak detail</string>
 </resources>

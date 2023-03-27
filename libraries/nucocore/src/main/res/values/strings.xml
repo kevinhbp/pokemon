@@ -24,4 +24,11 @@
 
   <string name="welcome_message">All the Pokémon data you\'ll ever need in one place!</string>
   <string name="welcome_description">Thousands of data compiled in one place</string>
+
+  <string name="more_detail">More detail</string>
+
+  <string name="weight_dd" translatable="false">Weight:</string>
+  <string name="height_dd" translatable="false">Height:</string>
+  <string name="abilities_dd" translatable="false">Abilities:</string>
+  <string name="type_dd" translatable="false">Type:</string>
 </resources>

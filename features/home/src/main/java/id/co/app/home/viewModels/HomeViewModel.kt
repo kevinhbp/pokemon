@@ -12,6 +12,7 @@ import id.co.app.nucocore.domain.entities.pokemon.PokemonLoadResult
 import id.co.app.nucocore.domain.entities.row.SpaceModel
 import id.co.app.nucocore.domain.entities.view.PokeCardModel
 import id.co.app.nucocore.domain.entities.view.PokeHeaderModel
+import id.co.app.nucocore.domain.entities.view.PokeInfo1Model
 import id.co.app.nucocore.domain.repository.MainRepository
 import id.co.app.nucocore.extension.onFailure
 import id.co.app.nucocore.extension.onLoading
@@ -31,8 +32,8 @@ class HomeViewModel(private val mainRepository: MainRepository) : ViewModel() {
   private val _loading = MutableLiveData(false)
   val loading: LiveData<Boolean> get() = _loading
 
-  private val _pokemonList = MutableLiveData<ArrayList<Pokemon>>()
-  val pokemonList: LiveData<ArrayList<Pokemon>> get() = _pokemonList
+  private val _contentDataDetail = MutableLiveData<MutableList<DelegateAdapterItem>>()
+  val contentDataDetail: LiveData<MutableList<DelegateAdapterItem>> get() = _contentDataDetail
 
   private var page: Int = 1
   var topSpace: Int = 180.toDp()
@@ -72,8 +73,21 @@ class HomeViewModel(private val mainRepository: MainRepository) : ViewModel() {
       _contentList.add(PokeHeaderModel(model.count))
     }
     model.results.forEach {
-      _contentList.add(PokeCardModel(it.id, it.name, it.types.map { e -> e.type.name }))
+      _contentList.add(
+        PokeCardModel(
+          it.id,
+          it.name,
+          it.types.map { e -> e.type.name },
+          pokemon = it
+        )
+      )
     }
     _contentData.postValue(_contentList.toMutableList())
+  }
+
+  fun setPokemon(pokemon: Pokemon) {
+    val content = ArrayList<DelegateAdapterItem>()
+    content.add(PokeInfo1Model.fromPokemon(pokemon))
+    _contentDataDetail.postValue(content)
   }
 }

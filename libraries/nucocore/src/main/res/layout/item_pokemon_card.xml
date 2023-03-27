@@ -1,73 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-  <FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <androidx.cardview.widget.CardView
-      android:layout_width="match_parent"
-      android:layout_height="@dimen/card_height_size"
-      android:layout_marginHorizontal="@dimen/content_horizontal_lv3"
-      android:layout_marginTop="@dimen/space_x1"
-      android:layout_marginBottom="@dimen/space_x2"
-      app:cardBackgroundColor="@color/nuco_white"
-      app:cardCornerRadius="@dimen/radius_card_moderate"
-      app:cardElevation="@dimen/elevation_small">
-
-      <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/content_horizontal_lv2">
+        android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageView
-          android:id="@+id/image_poke"
-          android:layout_width="match_parent"
-          android:layout_height="0dp"
-          android:layout_marginBottom="@dimen/space_x1"
-          app:layout_constraintBottom_toTopOf="@+id/text_number"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_height_size"
+            android:layout_marginHorizontal="@dimen/content_horizontal_lv3"
+            android:layout_marginTop="@dimen/space_x1"
+            android:layout_marginBottom="@dimen/space_x2"
+            app:cardBackgroundColor="@color/nuco_white"
+            app:cardCornerRadius="@dimen/radius_card_moderate"
+            app:cardElevation="@dimen/elevation_small">
 
-        <androidx.appcompat.widget.AppCompatTextView
-          android:id="@+id/text_number"
-          style="@style/Body.Moderate"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:textColor="@color/color_on_surface"
-          app:layout_constraintBottom_toTopOf="@+id/text_name"
-          app:layout_constraintStart_toStartOf="parent"
-          tools:text="# 001" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/content_horizontal_lv2">
 
-        <androidx.appcompat.widget.AppCompatTextView
-          android:id="@+id/text_name"
-          style="@style/Headline.Moderate"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="@dimen/space_x3"
-          android:textColor="@color/color_on_background"
-          app:layout_constraintBottom_toTopOf="@+id/rv_types"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          tools:text="Bulbasaur" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image_poke"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/space_x1"
+                    app:layout_constraintBottom_toTopOf="@+id/text_number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-          android:id="@+id/rv_types"
-          android:layout_width="0dp"
-          android:layout_height="@dimen/tag_wrapper_height"
-          android:layout_marginBottom="@dimen/space_x3"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_number"
+                    style="@style/Body.Moderate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_on_surface"
+                    app:layout_constraintBottom_toTopOf="@+id/text_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="# 001" />
 
-      </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_name"
+                    style="@style/Headline.Moderate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_x3"
+                    android:textColor="@color/color_on_background"
+                    app:layout_constraintBottom_toTopOf="@+id/rv_types"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Bulbasaur" />
 
-    </androidx.cardview.widget.CardView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_types"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/tag_wrapper_height"
+                    android:layout_marginBottom="@dimen/space_x3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-  </FrameLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/button_action"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_ripple_card"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
 
 </layout>
