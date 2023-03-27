@@ -19,7 +19,6 @@ import id.co.app.nucocore.domain.repository.MainRepository
 import id.co.app.nucocore.extension.pokemon.*
 
 class PokeCardAdapter(
-  private val loadDetail: (name: String, onResult: (Pokemon) -> Unit) -> Unit,
   private val clickListener: (ActionButtonModel) -> Unit
 ) : DelegateAdapter<PokeCardModel, PokeCardAdapter.PokeCardViewHolder>(
   PokeCardModel::class.java
@@ -64,7 +63,7 @@ class PokeCardAdapter(
       textNumber.text = number
       textName.text = name
 
-      val mLayoutManager = LinearLayoutManager(binding.root.context, RecyclerView.VERTICAL, false)
+      val mLayoutManager = LinearLayoutManager(binding.root.context, RecyclerView.HORIZONTAL, false)
       rvTypes.apply {
         adapter = mAdapter
         layoutManager = mLayoutManager

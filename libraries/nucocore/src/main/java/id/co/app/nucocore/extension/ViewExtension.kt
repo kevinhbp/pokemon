@@ -16,6 +16,7 @@ import android.widget.ScrollView
 import androidx.core.content.ContextCompat
 import androidx.core.widget.NestedScrollView
 import androidx.lifecycle.LifecycleCoroutineScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import id.co.app.nucocore.R
@@ -140,3 +141,32 @@ fun SwipeRefreshLayout.applyDefaultColor(): SwipeRefreshLayout {
   return this
 }
 // endregion
+
+fun RecyclerView.initItemVisibleListenerLinearLayout(
+  listener: (first: Int, last: Int, progress: Int) -> Unit
+) {
+  if (this.layoutManager !is LinearLayoutManager) return
+  val layMan = this.layoutManager as LinearLayoutManager
+  this.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+    override fun onScrolled(
+      recyclerView: RecyclerView,
+      dx: Int,
+      dy: Int
+    ) {
+      val first = layMan.findFirstVisibleItemPosition()
+      val last = layMan.findLastVisibleItemPosition()
+
+      val range = recyclerView.computeVerticalScrollRange()
+        .toFloat()
+      val offset = recyclerView.computeVerticalScrollOffset()
+        .toFloat()
+      val extent = recyclerView.computeVerticalScrollExtent()
+        .toFloat()
+      val scrollProgress = (offset / (range - extent) * 100).toInt()
+
+      if (last < 0) return
+      listener.invoke(first, last, scrollProgress)
+      super.onScrolled(recyclerView, dx, dy)
+    }
+  })
+}

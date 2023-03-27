@@ -60,7 +60,7 @@ class PokeTypeAdapter : DelegateAdapter<PokeTypeModel, PokeTypeAdapter.PokeTypeV
         this[0] = color
         this[1] = color
       }
-      view.backgroundTintList = ColorStateList(defaultStateList, colorList)
+      view.imageTintList = ColorStateList(defaultStateList, colorList)
     }
   }
 

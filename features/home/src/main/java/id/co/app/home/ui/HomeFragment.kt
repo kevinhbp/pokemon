@@ -13,6 +13,8 @@ import id.co.app.nucocore.base.BaseFragment
 import id.co.app.nucocore.base.RecyclerViewPagination
 import id.co.app.nucocore.base.adapterdelegate.CompositeAdapter
 import id.co.app.nucocore.components.dialog.showLoadingDialog
+import id.co.app.nucocore.extension.applyDefaultColor
+import id.co.app.nucocore.extension.initItemVisibleListenerLinearLayout
 import id.co.app.nucocore.extension.toDp
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -25,11 +27,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
       .add(SpaceAdapter())
       .add(DefaultEmptyStateAdapter { })
       .add(PokeHeaderAdapter())
-      .add(PokeCardAdapter({ key, onLoad ->
-        homeViewModel.loadDetail(key, onLoad)
-      }, {
-
-      }))
+      .add(PokeCardAdapter { })
       .build()
   }
 
@@ -40,9 +38,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
   override fun setupView() {
     binding.viewModel = homeViewModel
-    homeViewModel.setTopSpace(
-      requireActivity().resources.getDimension(R.dimen.action_bar_height).toInt().toDp()
-    )
+    homeViewModel.topSpace =
+      requireActivity().resources.getDimension(R.dimen.action_bar_height).toInt()
     setupRecyclerView()
   }
 
@@ -71,9 +68,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
       adapter = mAdapter
       layoutManager = mLayoutManager
     }
+    mSr.applyDefaultColor()
     mSr.setOnRefreshListener {
-      homeViewModel.resetPage()
-      homeViewModel.loadContent()
+      homeViewModel.refresh()
+    }
+    mRv.initItemVisibleListenerLinearLayout { _, _, progress ->
+      if (progress == 100) {
+        homeViewModel.loadContent()
+      }
     }
   }
 }

@@ -5,7 +5,7 @@ import id.co.app.nucocore.base.adapterdelegate.DelegateAdapterItem
 import java.io.Serializable
 
 data class PokeCardModel(
-  val pokeId: Int,
+  var pokeId: Int,
   val pokeName: String,
   val types: List<String>,
 ): Serializable, DelegateAdapterItem, BaseModel() {

@@ -5,7 +5,7 @@
   <translate
     android:duration="@integer/slide"
     android:fromXDelta="0%"
-    android:fromYDelta="-100%"
+    android:fromYDelta="100%"
     android:toXDelta="0%"
     android:toYDelta="0%" />
 </set>
