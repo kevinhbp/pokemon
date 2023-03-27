@@ -34,7 +34,7 @@ class PokeAbilityAdapter : DelegateAdapter<PokeAbilityModel, PokeAbilityAdapter.
     override fun bind(data: PokeAbilityModel) {
       val textLabel = binding.textLabel
       val type = data.name
-      textLabel.text = type
+      textLabel.text = type.formatName()
     }
   }
 

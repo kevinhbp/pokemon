@@ -14,6 +14,7 @@ fun String.formatName(): String {
   val result = StringBuffer()
   for (mName in names) {
     result.append(mName.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() })
+    result.append(' ')
   }
   return result.toString()
 }
