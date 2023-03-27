@@ -10,7 +10,8 @@
       type="id.co.app.home.viewModels.HomeViewModel" />
   </data>
 
-  <FrameLayout
+  <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/sr_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="MergeRootFrame">
@@ -21,6 +22,6 @@
       android:layout_height="match_parent"
       android:layout_marginTop="@dimen/space_x10" />
 
-  </FrameLayout>
+  </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </layout>

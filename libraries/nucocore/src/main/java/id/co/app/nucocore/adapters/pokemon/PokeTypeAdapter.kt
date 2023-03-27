@@ -1,7 +1,10 @@
 package id.co.app.nucocore.adapters.pokemon
 
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import id.co.app.nucocore.base.BaseViewHolder
 import id.co.app.nucocore.base.adapterdelegate.DelegateAdapter
@@ -45,7 +48,19 @@ class PokeTypeAdapter : DelegateAdapter<PokeTypeModel, PokeTypeAdapter.PokeTypeV
 
       textLabel.text = type.formatName()
       ViewBinding.bindImageResId(imageIcon, icon)
-      ViewBinding.bindBackgroundTint(imageBg, bgColor)
+      setBackgroundTint(imageBg, bgColor)
+    }
+
+    private fun setBackgroundTint(view: ImageView, color: Int) {
+      val defaultStateList = arrayOf(
+        IntArray(1) { android.R.attr.state_enabled },
+        IntArray(1) { -android.R.attr.state_enabled },
+      )
+      val colorList = IntArray(2).apply {
+        this[0] = color
+        this[1] = color
+      }
+      view.backgroundTintList = ColorStateList(defaultStateList, colorList)
     }
   }
 

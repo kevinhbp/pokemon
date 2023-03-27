@@ -10,6 +10,7 @@ import id.co.app.nucocore.adapters.SpaceAdapter
 import id.co.app.nucocore.adapters.pokemon.PokeCardAdapter
 import id.co.app.nucocore.adapters.pokemon.PokeHeaderAdapter
 import id.co.app.nucocore.base.BaseFragment
+import id.co.app.nucocore.base.RecyclerViewPagination
 import id.co.app.nucocore.base.adapterdelegate.CompositeAdapter
 import id.co.app.nucocore.components.dialog.showLoadingDialog
 import id.co.app.nucocore.extension.toDp
@@ -56,12 +57,34 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
   }
 
   ///
+  private val paginationListener by lazy {
+    RecyclerViewPagination(
+      recyclerView = binding.rvContent,
+      isLoading = {
+        homeViewModel.loading.value ?: false
+      },
+      loadMore = {
+        homeViewModel.loadContent()
+      },
+      onLast = { false }
+    ).apply {
+      threshold = 2
+    }
+  }
+
   private fun setupRecyclerView() {
     val mRv = binding.rvContent
+    val mSr = binding.srContent
     val mLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
     mRv.apply {
       adapter = mAdapter
       layoutManager = mLayoutManager
+      addOnScrollListener(paginationListener)
+    }
+    mSr.setOnRefreshListener {
+      paginationListener.resetCurrentPage()
+      homeViewModel.resetPage()
+      homeViewModel.loadContent()
     }
   }
 }

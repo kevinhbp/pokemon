@@ -34,17 +34,17 @@ class MainRepository(
 
   fun refreshPokemonList() {
     nextPageKey = 1
-    getPokemonList()
   }
 
-  fun getPokemonList(): Flow<Result<DelegateAdapterItem>> = flow {
+  fun getPokemonList(): Flow<Result<List<DelegateAdapterItem>>> = flow {
     emit(Result.Loading)
     try {
+      val result: ArrayList<DelegateAdapterItem> = arrayListOf()
       val data = mainClient.getPokemonList(getOffset(), loadLimit)
       nextPageKey += 1
       if (getCurrentPage() == 1) {
-        emit(Result.Success(SpaceModel(topSpace)))
-        emit(Result.Success(PokeHeaderModel(data.count)))
+        result.add(SpaceModel(topSpace))
+        result.add(PokeHeaderModel(data.count))
       }
       data.results.forEach { poke ->
         val pokeDetail = mainClient.getPokemonDetail(poke.name)
@@ -52,8 +52,31 @@ class MainRepository(
         pokeDetail.types.forEach { type ->
           types.add(type.type.name)
         }
-        emit(Result.Success(PokeCardModel(pokeDetail.id, pokeDetail.name, types)))
+        result.add(PokeCardModel(pokeDetail.id, pokeDetail.name, types))
       }
+      emit(Result.Success(result))
+    } catch (e: Exception) {
+      emit(Result.Failure(e))
+    }
+  }
+
+  fun getPokemonListBetter(): Flow<Result<List<DelegateAdapterItem>>> = flow {
+    emit(Result.Loading)
+    val newModels: ArrayList<DelegateAdapterItem> = arrayListOf()
+    try {
+      val data = mainClient.getPokemonList(getOffset(), loadLimit)
+      nextPageKey += 1
+      if (getCurrentPage() == 1) {
+        newModels.add(SpaceModel(topSpace))
+        newModels.add(PokeHeaderModel(data.count))
+      }
+      data.results.forEach { poke ->
+        val det = mainClient.getPokemonDetail(poke.name)
+        val pTypes : ArrayList<String> = arrayListOf()
+        det.types.forEach { pTypes.add(it.type.name) }
+        newModels.add(PokeCardModel(det.id, poke.name, pTypes))
+      }
+      emit(Result.Success(newModels))
     } catch (e: Exception) {
       emit(Result.Failure(e))
     }

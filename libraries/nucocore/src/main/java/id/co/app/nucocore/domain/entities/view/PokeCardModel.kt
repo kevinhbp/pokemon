@@ -10,16 +10,17 @@ data class PokeCardModel(
   val types: List<String>,
 ): Serializable, DelegateAdapterItem, BaseModel() {
 
-  override val id: Any get() = pokeId
+  override val id: Any get() = pokeName
 
-  override fun id(): Any = pokeId
+  override fun id(): Any = pokeName
 
   override fun equals(other: BaseModel): Boolean {
-    return other is PokeCardModel && other.pokeId == pokeId &&
-      other.pokeName == pokeName && other.types == types
+    return other is PokeCardModel && other.pokeName == pokeName
   }
 
   override fun content(): Any {
-    return "pokemon_type:$pokeId.$pokeName.$types"
+    var typeString = ""
+    types.forEach { typeString += it }
+    return "pokemon_type:$pokeId.$pokeName.$typeString"
   }
 }
