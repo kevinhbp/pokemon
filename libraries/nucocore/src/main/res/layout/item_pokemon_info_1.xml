@@ -117,7 +117,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_abilities"
             android:layout_width="0dp"
-            android:layout_height="@dimen/abilities_height_wrapper"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/content_horizontal_lv2"
             android:layout_marginBottom="@dimen/space_x6"
             android:layout_marginTop="@dimen/space_x1"

@@ -130,7 +130,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
       adapter = mAdapterDetail
       layoutManager = mLayoutManager
       isNestedScrollingEnabled = true
-      setItemViewCacheSize(20)
+      setItemViewCacheSize(10)
       hasFixedSize()
     }
   }

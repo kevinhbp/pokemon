@@ -10,6 +10,7 @@ import id.co.app.nucocore.base.adapterdelegate.DelegateAdapter
 import id.co.app.nucocore.base.adapterdelegate.DelegateAdapterItem
 import id.co.app.nucocore.binding.ViewBinding
 import id.co.app.nucocore.databinding.ItemPokemonInfo1Binding
+import id.co.app.nucocore.domain.entities.view.PokeAbilityModel
 import id.co.app.nucocore.domain.entities.view.PokeInfo1Model
 import id.co.app.nucocore.domain.entities.view.PokeTypeModel
 import id.co.app.nucocore.extension.pokemon.getPokeSpritesById
@@ -42,6 +43,12 @@ class PokeInfo1Adapter : DelegateAdapter<PokeInfo1Model, PokeInfo1Adapter.PokeIn
         .build()
     }
 
+    private val mAdapter2 by lazy {
+      CompositeAdapter.Builder()
+        .add(PokeAbilityAdapter())
+        .build()
+    }
+
     override fun bind(data: PokeInfo1Model) {
       binding.textName.text = data.pokeName
 
@@ -64,6 +71,22 @@ class PokeInfo1Adapter : DelegateAdapter<PokeInfo1Model, PokeInfo1Adapter.PokeIn
         typeList.add(PokeTypeModel(type))
       }
       mAdapter.submitList(typeList.toMutableList())
+
+      // --
+      val rvAbilities = binding.rvAbilities
+      val mLayoutManager2 = LinearLayoutManager(binding.root.context, RecyclerView.VERTICAL, false)
+      rvAbilities.apply {
+        adapter = mAdapter2
+        layoutManager = mLayoutManager2
+      }
+
+      val abilityList = arrayListOf<DelegateAdapterItem>()
+      data.abilities.forEach { name ->
+        abilityList.add(PokeAbilityModel(name))
+      }
+      mAdapter2.submitList(abilityList.toMutableList())
+
+
     }
   }
 
