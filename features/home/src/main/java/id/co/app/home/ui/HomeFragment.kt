@@ -1,5 +1,7 @@
 package id.co.app.home.ui
 
+import android.annotation.SuppressLint
+import android.view.MotionEvent
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -120,12 +122,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     })
   }
 
+  @SuppressLint("ClickableViewAccessibility")
   private fun setupRecyclerViewDetail() {
     val mRv = binding.pokemonOverview.rvContent
     val mLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
     mRv.apply {
       adapter = mAdapterDetail
       layoutManager = mLayoutManager
+      isNestedScrollingEnabled = true
+      setItemViewCacheSize(20)
+      hasFixedSize()
     }
   }
 
@@ -138,9 +144,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
   private fun onBottomSheetStateChanged(newState: Int) {
     if (newState == BottomSheetBehavior.STATE_EXPANDED) {
+      bottomSheetBehavior.isDraggable = true
       (requireActivity() as MainActNavi).showActionBar(false)
       setStatusColor(false)
     } else if (newState == BottomSheetBehavior.STATE_COLLAPSED) {
+      bottomSheetBehavior.isDraggable = false
       (requireActivity() as MainActNavi).showActionBar(true)
       setStatusColor(true)
     }

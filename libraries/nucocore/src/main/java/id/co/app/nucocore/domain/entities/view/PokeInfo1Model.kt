@@ -3,6 +3,7 @@ package id.co.app.nucocore.domain.entities.view
 import id.co.app.nucocore.base.BaseModel
 import id.co.app.nucocore.base.adapterdelegate.DelegateAdapterItem
 import id.co.app.nucocore.domain.entities.pokemon.Pokemon
+import id.co.app.nucocore.extension.pokemon.formatName
 import java.io.Serializable
 
 data class PokeInfo1Model(
@@ -12,7 +13,7 @@ data class PokeInfo1Model(
   val pokeHeight: String,
   val types: List<String>,
   val abilities: List<String>,
-): Serializable, DelegateAdapterItem, BaseModel() {
+) : Serializable, DelegateAdapterItem, BaseModel() {
 
   override val id: Any get() = pokeName
 
@@ -31,11 +32,19 @@ data class PokeInfo1Model(
 
   companion object {
     fun fromPokemon(pokemon: Pokemon): PokeInfo1Model {
-      val weight = (pokemon.weight/100).toInt().toString() + " Kg"
-      val height = (pokemon.height/10).toInt().toString() + " M"
+      val id = pokemon.id
+      val name = pokemon.name.formatName()
+      val weight = (pokemon.weight.toFloat() / 10f).toString() + " kg"
+      val height = (pokemon.height.toFloat() / 10f).toString() + " m"
       val type = pokemon.types.map { e -> e.type.name }
-      val abilities = pokemon.abilities.map { e -> e.ability.name }
-      return PokeInfo1Model(pokemon.id, pokemon.name, weight, height, type, abilities)
+      val abilities = pokemon.abilities.map { e ->
+        if (e.isHidden) {
+          e.ability.name + " (hidden)"
+        } else {
+          e.ability.name
+        }
+      }
+      return PokeInfo1Model(id, name, weight, height, type, abilities)
     }
   }
 }

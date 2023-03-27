@@ -92,7 +92,7 @@
 
   <dimen name="content_empty_state_layout_height">370dp</dimen>
 
-  <dimen name="bs_peek_height">10dp</dimen>
+  <dimen name="bs_peek_height">2dp</dimen>
 
   <dimen name="abilities_height_wrapper">90dp</dimen>
 </resources>
