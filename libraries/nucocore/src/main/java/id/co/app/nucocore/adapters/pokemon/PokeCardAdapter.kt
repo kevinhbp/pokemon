@@ -58,11 +58,12 @@ class PokeCardAdapter(
 
       val photoUrl = getPokeSpritesById(data.pokeId)
       val number = data.pokeId.formatId()
+      val mNumber = "# $number"
       val name = data.pokeName.formatName()
 
       ViewBinding.bindImageFromUrlCenterInside(imagePhotoView, photoUrl)
 
-      textNumber.text = number
+      textNumber.text = mNumber
       textName.text = name
 
       val mLayoutManager = LinearLayoutManager(binding.root.context, RecyclerView.HORIZONTAL, false)

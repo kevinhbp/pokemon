@@ -16,6 +16,7 @@ import id.co.app.nucocore.base.adapterdelegate.adapter.model.LoadingModel
 import id.co.app.nucocore.deeplink.InternalDeepLink
 import id.co.app.nucocore.domain.entities.pokemon.PokeResult
 import id.co.app.nucocore.domain.entities.pokemon.PokemonEvolution
+import id.co.app.nucocore.domain.entities.pokemon.PokemonLoadResult
 import id.co.app.nucocore.domain.entities.row.SpaceModel
 import id.co.app.nucocore.domain.entities.view.*
 import id.co.app.nucocore.domain.repository.MainRepository
@@ -47,18 +48,22 @@ class TypesViewModel(
 
   private val typeData: ArrayList<PokeResult> = arrayListOf()
 
+  private var loadResult: PokemonLoadResult? = null
+
   fun start(stringCallback: (id: Int) -> String, dimenCallback: (id: Int) -> Int) {
     getStringResource = stringCallback
     getDimenResource = dimenCallback
 
     setupView()
     fetchTypeData()
+    // fetchPokemonByType()
   }
 
   fun setSelectedType(newType: String) {
     mSelectedType = newType
     _selectedType.postValue(newType)
-
+    loadResult = null
+    // fetchPokemonByType()
     setupView()
   }
 
@@ -77,7 +82,9 @@ class TypesViewModel(
 
     content.add(PokeTypeHeaderModel(mSelectedType))
 
-    // TODO SHOW POKEMON BY TYPE
+    loadResult?.results?.forEach {
+      content.add(PokeCardModel.fromPokemon(it))
+    }
 
     _contentData.postValue(content)
   }
@@ -95,6 +102,24 @@ class TypesViewModel(
           _loading.postValue(false)
           typeData.clear()
           typeData.addAll(it)
+          setupView()
+        }
+      }
+    }
+  }
+
+  private fun fetchPokemonByType() {
+    viewModelScope.launch(Dispatchers.IO) {
+      mainRepository.getPokemonListWithTypeId(mSelectedType).collect { result ->
+        result.onLoading {
+          _loading.postValue(true)
+        }
+        result.onFailure {
+          _loading.postValue(false)
+        }
+        result.onSuccess {
+          _loading.postValue(false)
+
           setupView()
         }
       }

@@ -11,10 +11,12 @@ import id.co.app.nucocore.base.BaseFragment
 import id.co.app.types.databinding.FragmentTypesBinding
 import id.co.app.types.viewModels.TypesViewModel
 import id.co.app.nucocore.adapters.DefaultEmptyStateAdapter
+import id.co.app.nucocore.adapters.pokemon.PokeCardAdapter
 import id.co.app.nucocore.adapters.pokemon.PokeTypeButtonAdapter
 import id.co.app.nucocore.adapters.pokemon.PokeTypeHeaderAdapter
 import id.co.app.nucocore.base.adapterdelegate.adapter.LoadingAdapter
 import id.co.app.nucocore.components.dialog.showLoadingDialog
+import id.co.app.nucocore.domain.entities.view.PokeCardModel
 import id.co.app.nucocore.extension.pokemon.ColorPokemonBg
 import id.co.app.nucocore.navigation.MainActNavi
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -31,6 +33,9 @@ class TypesFragment : BaseFragment<FragmentTypesBinding>() {
       .add(PokeTypeHeaderAdapter())
       .add(PokeTypeButtonAdapter {
         typesViewModel.setSelectedType(it)
+      })
+      .add(PokeCardAdapter {
+        
       })
       .build()
   }
@@ -78,7 +83,7 @@ class TypesFragment : BaseFragment<FragmentTypesBinding>() {
   }
 
   private fun adaptBg(type: String) {
-    val newColor= ColorPokemonBg.get(type)
+    val newColor = ColorPokemonBg.get(type)
     val defaultStateList = arrayOf(
       IntArray(1) { android.R.attr.state_enabled },
       IntArray(1) { -android.R.attr.state_enabled },

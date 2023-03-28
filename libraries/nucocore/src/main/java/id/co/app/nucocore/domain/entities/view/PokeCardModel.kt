@@ -30,4 +30,16 @@ data class PokeCardModel(
     types.forEach { result += "$it." }
     return result
   }
+
+  companion object {
+
+    fun fromPokemon(pokemon: Pokemon): PokeCardModel {
+      return PokeCardModel(
+        pokemon.id,
+        pokemon.name,
+        pokemon.types.map { e -> e.type.name },
+        pokemon = pokemon
+      )
+    }
+  }
 }
