@@ -28,6 +28,13 @@
 
   <color name="primary_disabled">@color/nuco_gray_3</color>
   <color name="primary_disabled_color_on">@color/nuco_white</color>
+
+  <color name="tertiary_active">@color/nuco_purple_5</color>
+  <color name="tertiary_active_pressed">@color/nuco_purple_4</color>
+  <color name="tertiary_active_color_on">@color/color_primary</color>
+
+  <color name="tertiary_disabled">@color/nuco_gray_5</color>
+  <color name="tertiary_disabled_color_on">@color/nuco_gray_3</color>
   <!-- endregion -->
 
   <color name="card_color">@color/color_surface</color>

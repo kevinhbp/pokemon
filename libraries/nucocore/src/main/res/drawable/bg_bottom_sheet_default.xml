@@ -9,7 +9,7 @@
   <item
     android:top="8dp">
     <shape android:shape="rectangle">
-      <solid android:color="@color/nuco_white" />
+      <solid android:color="@color/color_surface" />
       <corners
         android:topLeftRadius="@dimen/radius_card_moderate"
         android:topRightRadius="@dimen/radius_card_moderate" />

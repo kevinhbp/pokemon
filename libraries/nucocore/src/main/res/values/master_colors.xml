@@ -20,11 +20,7 @@
   <color name="secondary_destructive_color_on">@color/nuco_red_2</color>
   <color name="secondary_destructive_color_on_pressed">@color/nuco_red_1</color>
 
-  <color name="tertiary_active">@color/nuco_purple_5</color>
-  <color name="tertiary_active_pressed">@color/nuco_purple_4</color>
-  <color name="tertiary_active_color_on">@color/nuco_purple_1</color>
-  <color name="tertiary_disabled">@color/nuco_gray_5</color>
-  <color name="tertiary_disabled_color_on">@color/nuco_gray_3</color>
+
   <color name="tertiary_destructive">@color/nuco_red_5</color>
   <color name="tertiary_destructive_pressed">@color/nuco_red_4</color>
   <color name="tertiary_destructive_color_on">@color/nuco_red_2</color>
