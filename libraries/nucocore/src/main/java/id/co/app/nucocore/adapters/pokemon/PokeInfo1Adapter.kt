@@ -39,7 +39,9 @@ class PokeInfo1Adapter : DelegateAdapter<PokeInfo1Model, PokeInfo1Adapter.PokeIn
 
     private val mAdapter by lazy {
       CompositeAdapter.Builder()
-        .add(PokeTypeAdapter())
+        .add(PokeTypeAdapter {
+
+        })
         .build()
     }
 

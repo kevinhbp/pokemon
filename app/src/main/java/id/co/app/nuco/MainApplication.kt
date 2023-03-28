@@ -12,6 +12,7 @@ import id.co.app.nucocore.singleton.HeaderSingleton
 import id.co.app.nucocore.singleton.LOG_TAG
 import id.co.app.detail.viewModels.DetailViewModel
 import id.co.app.session.UserSessionModule
+import id.co.app.types.viewModels.TypesViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -69,5 +70,7 @@ class MainApplication : MultiDexApplication() {
     viewModel { HomeViewModel(get()) }
 
     viewModel { DetailViewModel(get(), get()) }
+
+    viewModel { TypesViewModel(get(), get()) }
   }
 }

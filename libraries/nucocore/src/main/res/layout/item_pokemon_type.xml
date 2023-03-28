@@ -5,15 +5,15 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/space_x1"
+        android:layout_height="@dimen/button_size_small"
+        android:layout_margin="@dimen/space_x1"
         app:cardBackgroundColor="@color/nuco_white"
         app:cardCornerRadius="@dimen/radius_card_large"
         app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/image_background"
@@ -29,8 +29,7 @@
             <FrameLayout
                 android:id="@+id/image_icon_wrapper"
                 android:layout_width="@dimen/tag_height"
-                android:layout_height="@dimen/tag_height"
-                android:layout_marginVertical="@dimen/space_x1"
+                android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/space_x3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +48,7 @@
                 android:id="@+id/text_label"
                 style="@style/Headline.Tiny"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/tag_height"
+                android:layout_height="match_parent"
                 android:layout_marginEnd="@dimen/space_x3"
                 android:gravity="center_vertical"
                 android:textColor="@color/color_text_white_0"
@@ -58,6 +57,18 @@
                 app:layout_constraintStart_toEndOf="@+id/image_icon_wrapper"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Tipe 1" />
+
+            <View
+                android:id="@+id/button_action"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/bg_ripple_card"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

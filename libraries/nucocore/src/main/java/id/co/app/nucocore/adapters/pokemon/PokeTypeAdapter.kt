@@ -16,7 +16,9 @@ import id.co.app.nucocore.extension.pokemon.ColorPokemon
 import id.co.app.nucocore.extension.pokemon.IconPokemonResId
 import id.co.app.nucocore.extension.pokemon.formatName
 
-class PokeTypeAdapter : DelegateAdapter<PokeTypeModel, PokeTypeAdapter.PokeTypeViewHolder>(
+class PokeTypeAdapter(
+  private val onClick: (type: String) -> Unit,
+) : DelegateAdapter<PokeTypeModel, PokeTypeAdapter.PokeTypeViewHolder>(
   PokeTypeModel::class.java
 ) {
 
@@ -49,6 +51,10 @@ class PokeTypeAdapter : DelegateAdapter<PokeTypeModel, PokeTypeAdapter.PokeTypeV
       textLabel.text = type.formatName()
       ViewBinding.bindImageResId(imageIcon, icon)
       setBackgroundTint(imageBg, bgColor)
+
+      binding.buttonAction.setOnClickListener {
+        onClick.invoke(data.name)
+      }
     }
 
     private fun setBackgroundTint(view: ImageView, color: Int) {

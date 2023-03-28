@@ -44,7 +44,9 @@ class PokeCardAdapter(
 
     private val mAdapter by lazy {
       CompositeAdapter.Builder()
-        .add(PokeTypeAdapter())
+        .add(PokeTypeAdapter {
+
+        })
         .build()
     }
 

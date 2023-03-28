@@ -4,6 +4,7 @@ package id.co.app.nucocore.extension.pokemon
 
 import android.graphics.Color
 import id.co.app.nucocore.R.drawable
+import id.co.app.nucocore.extension.toIntOrZero
 
 fun String.formatName(): String {
   if (this.isEmpty()) return ""
@@ -60,6 +61,8 @@ object ColorPokemon {
   private val dark = "#535356"
   private val steel = "#688588"
   private val fairy = "#f1a6eb"
+  private val unknown = "#4F4789"
+  private val shadow = "#3f3f3f"
 
   private fun toMap(): Map<String, String> {
     return mapOf(
@@ -81,6 +84,8 @@ object ColorPokemon {
       Pair("dark", dark),
       Pair("steel", steel),
       Pair("fairy", fairy),
+      Pair("unknown", unknown),
+      Pair("shadow", shadow),
     )
   }
 
@@ -113,6 +118,8 @@ object ColorPokemonBg {
   private val dark = "#9C9CA1"
   private val steel = "#9BB1B6"
   private val fairy = "#C4A2C1"
+  private val unknown = "#978FF5"
+  private val shadow = "#949494"
 
   private fun toMap(): Map<String, String> {
     return mapOf(
@@ -134,6 +141,8 @@ object ColorPokemonBg {
       Pair("dark", dark),
       Pair("steel", steel),
       Pair("fairy", fairy),
+      Pair("unknown", unknown),
+      Pair("shadow", shadow),
     )
   }
 
@@ -166,6 +175,8 @@ object IconPokemonResId {
   private val dark = drawable.ic_dark
   private val steel = drawable.ic_steel
   private val fairy = drawable.ic_fairy
+  private val unknown = drawable.ic_dark
+  private val shadow = drawable.ic_psychic
 
   private fun toMap(): Map<String, Int> {
     return mapOf(
@@ -187,6 +198,8 @@ object IconPokemonResId {
       Pair("dark", dark),
       Pair("steel", steel),
       Pair("fairy", fairy),
+      Pair("unknown", unknown),
+      Pair("shadow", shadow),
     )
   }
 
@@ -198,4 +211,9 @@ object IconPokemonResId {
     }
     return result
   }
+}
+
+fun String.getTypeIdFromUrl(): Int {
+  return this.removePrefix("https://pokeapi.co/api/v2/type/")
+    .removeSuffix("/").toIntOrZero()
 }

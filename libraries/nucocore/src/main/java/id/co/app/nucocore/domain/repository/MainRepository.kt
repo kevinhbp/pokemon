@@ -29,6 +29,16 @@ class MainRepository(
     }
   }
 
+  fun getPokemonTypeList(): Flow<Result<List<PokeResult>>> = flow {
+    emit(Result.Loading)
+    try {
+      val data = mainClient.getPokemonTypeList()
+      emit(Result.Success(data.results))
+    } catch (e: Exception) {
+      emit(Result.Failure(e))
+    }
+  }
+
   fun getPokemonEvolutionList(id: Any): Flow<List<PokemonEvolutionSolution>> = flow {
     val source = mainClient.getPokemonEvolutionChain(id)
     val result = ArrayList<PokemonEvolutionSolution>()

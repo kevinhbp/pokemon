@@ -9,6 +9,7 @@ interface MainClientContract {
   interface MainCommon {
     suspend fun getPokemonList(offset: Int, limit: Int): PokemonList
     suspend fun getPokemonDetail(id: Any): Pokemon
+    suspend fun getPokemonTypeList(): PokemonList
     suspend fun getPokemonEvolutionChain(id: Any): PokemonEvolution
   }
 }

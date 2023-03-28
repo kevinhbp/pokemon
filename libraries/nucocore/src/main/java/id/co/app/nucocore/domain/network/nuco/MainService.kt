@@ -17,8 +17,12 @@ interface MainService {
     @Path("id") id: Any
   ): Pokemon
 
+  @GET("type")
+  suspend fun getPokemonTypeList(): PokemonList
+
   @GET("evolution-chain/{id}")
   suspend fun getPokemonEvolutionChain(
     @Path("id") id: Any
   ): PokemonEvolution
+
 }

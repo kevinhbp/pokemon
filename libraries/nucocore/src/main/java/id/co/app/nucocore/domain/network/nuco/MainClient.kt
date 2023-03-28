@@ -22,6 +22,10 @@ class MainClient(private val production: MainService, private val staging: MainS
     return getService().getPokemonDetail(id)
   }
 
+  override suspend fun getPokemonTypeList(): PokemonList {
+    return getService().getPokemonTypeList()
+  }
+
   override suspend fun getPokemonEvolutionChain(id: Any): PokemonEvolution {
     return getService().getPokemonEvolutionChain(id)
   }

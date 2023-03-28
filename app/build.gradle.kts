@@ -84,14 +84,14 @@ android {
     abortOnError = false
   }
 
-  splits {
+  /*splits {
     abi {
       isEnable = true
       reset()
       include("armeabi-v7a")
       isUniversalApk = false
     }
-  }
+  }*/
 }
 
 subprojects {

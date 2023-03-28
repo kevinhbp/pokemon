@@ -23,11 +23,19 @@
   </fragment>
 
   <fragment
-    android:id="@+id/detail_fragment"
-    android:name="id.co.app.detail.ui.DetailFragment"
-    android:label="detail"
-    tools:layout="@layout/fragment_detail">
+      android:id="@+id/detail_fragment"
+      android:name="id.co.app.detail.ui.DetailFragment"
+      android:label="detail"
+      tools:layout="@layout/fragment_detail">
     <deepLink app:uri="nuco://detail" />
+  </fragment>
+
+  <fragment
+      android:id="@+id/types_fragment"
+      android:name="id.co.app.types.ui.TypesFragment"
+      android:label="types"
+      tools:layout="@layout/fragment_types">
+    <deepLink app:uri="nuco://types" />
   </fragment>
 
 </navigation>

@@ -99,7 +99,8 @@ class MainActivity : AppCompatActivity(), MainActNavi {
   private fun onDestinationDefault(): Boolean {
     val nav = getNavController()
     val preventSingleTouchExitFragments = listOf(
-      id.splash_fragment
+      id.splash_fragment,
+      id.types_fragment,
     )
     val destinationId = nav.currentBackStackEntry?.destination?.id ?: -1
     return preventSingleTouchExitFragments.contains(destinationId)
@@ -153,6 +154,10 @@ class MainActivity : AppCompatActivity(), MainActNavi {
     blockerViewModel.targetLiveData.observe(this) {
       Log.d(LOG_TAG, "Blocker Target: $it")
       onTargetChanged(it)
+    }
+
+    viewModel.menu.observe(this) { menu ->
+      binding.actionBarView.menu = menu
     }
   }
 
@@ -219,6 +224,21 @@ class MainActivity : AppCompatActivity(), MainActNavi {
     shadowView.setOnTouchListener { _, _ ->
       showMenuContent(!menuShowing)
       false
+    }
+
+    val menuHome = binding.actionBarView.buttonHome
+    menuHome.setOnClickListener {
+      viewModel.setMenuHome()
+      onTargetChanged(InternalDeepLink.SPLASH)
+      showMenuContent(false)
+    }
+
+
+    val menuTypes = binding.actionBarView.buttonType
+    menuTypes.setOnClickListener {
+      viewModel.setMenuTypes()
+      onTargetChanged(InternalDeepLink.TYPES)
+      showMenuContent(false)
     }
   }
 
