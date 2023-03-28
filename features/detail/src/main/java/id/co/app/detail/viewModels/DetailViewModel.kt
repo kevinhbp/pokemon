@@ -15,6 +15,7 @@ import id.co.app.nucocore.deeplink.InternalDeepLink
 import id.co.app.nucocore.domain.entities.row.SpaceModel
 import id.co.app.nucocore.domain.entities.view.ActionButtonModel
 import id.co.app.nucocore.domain.entities.view.PokeInfo1Model
+import id.co.app.nucocore.domain.entities.view.PokeInfo2Model
 import id.co.app.nucocore.extension.toDp
 
 class DetailViewModel(
@@ -58,6 +59,7 @@ class DetailViewModel(
     content.add(SpaceModel(getDimenResource?.invoke(dimen.space_x4) ?: 40.toDp()))
 
     content.add(PokeInfo1Model.fromPokemon(data))
+    content.add(PokeInfo2Model.fromPokemon(data))
 
     _contentData.postValue(content)
 

@@ -5,10 +5,7 @@ import androidx.room.TypeConverter
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
-import id.co.app.nucocore.domain.entities.pokemon.PokeAbility
-import id.co.app.nucocore.domain.entities.pokemon.PokeResult
-import id.co.app.nucocore.domain.entities.pokemon.PokeStat
-import id.co.app.nucocore.domain.entities.pokemon.PokeType
+import id.co.app.nucocore.domain.entities.pokemon.*
 
 @ProvidedTypeConverter
 class TypeConverter constructor(
@@ -65,6 +62,18 @@ class TypeConverter constructor(
   @TypeConverter
   fun toPokeResult(value: String): PokeResult? {
     val adapter: JsonAdapter<PokeResult> = moshi.adapter(PokeResult::class.java)
+    return adapter.fromJson(value)
+  }
+
+  @TypeConverter
+  fun fromPokeSprite(type: PokeSprite?): String {
+    val adapter: JsonAdapter<PokeSprite> = moshi.adapter(PokeSprite::class.java)
+    return adapter.toJson(type)
+  }
+
+  @TypeConverter
+  fun toPokeSprite(value: String): PokeSprite? {
+    val adapter: JsonAdapter<PokeSprite> = moshi.adapter(PokeSprite::class.java)
     return adapter.fromJson(value)
   }
 }

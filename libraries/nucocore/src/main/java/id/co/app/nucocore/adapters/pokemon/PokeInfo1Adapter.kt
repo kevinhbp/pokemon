@@ -81,9 +81,7 @@ class PokeInfo1Adapter : DelegateAdapter<PokeInfo1Model, PokeInfo1Adapter.PokeIn
       }
 
       val abilityList = arrayListOf<DelegateAdapterItem>()
-      data.abilities.forEach { name ->
-        abilityList.add(PokeAbilityModel(name))
-      }
+      abilityList.addAll(data.abilities)
       mAdapter2.submitList(abilityList.toMutableList())
 
 

@@ -12,7 +12,7 @@ data class PokeInfo1Model(
   val pokeWeight: String,
   val pokeHeight: String,
   val types: List<String>,
-  val abilities: List<String>,
+  val abilities: List<PokeAbilityModel>,
 ) : Serializable, DelegateAdapterItem, BaseModel() {
 
   override val id: Any get() = pokeName
@@ -38,11 +38,12 @@ data class PokeInfo1Model(
       val height = (pokemon.height.toFloat() / 10f).toString() + " m"
       val type = pokemon.types.map { e -> e.type.name }
       val abilities = pokemon.abilities.map { e ->
-        if (e.isHidden) {
+        val aName = if (e.isHidden) {
           e.ability.name + " (hidden)"
         } else {
           e.ability.name
         }
+        PokeAbilityModel(aName, e.isHidden)
       }
       return PokeInfo1Model(id, name, weight, height, type, abilities)
     }

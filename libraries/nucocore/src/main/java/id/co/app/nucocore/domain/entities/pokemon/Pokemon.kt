@@ -12,6 +12,7 @@ data class Pokemon(
   val types: List<PokeType>,
   val height: Double,
   val weight: Double,
+  val sprites: PokeSprite,
   val stats: List<PokeStat>,
   val abilities: List<PokeAbility>,
   @SerializedName("base_experience")
