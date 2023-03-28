@@ -47,8 +47,7 @@ class TypesViewModel(
   private var getDimenResource: ((id: Int) -> Int)? = null
 
   private val typeData: ArrayList<PokeResult> = arrayListOf()
-
-  private var loadResult: PokemonLoadResult? = null
+  private val pokemonData: ArrayList<PokeResult> = arrayListOf()
 
   fun start(stringCallback: (id: Int) -> String, dimenCallback: (id: Int) -> Int) {
     getStringResource = stringCallback
@@ -56,14 +55,14 @@ class TypesViewModel(
 
     setupView()
     fetchTypeData()
-    // fetchPokemonByType()
+    fetchPokemonByType()
   }
 
   fun setSelectedType(newType: String) {
     mSelectedType = newType
     _selectedType.postValue(newType)
-    loadResult = null
-    // fetchPokemonByType()
+    pokemonData.clear()
+    fetchPokemonByType()
     setupView()
   }
 
@@ -82,9 +81,7 @@ class TypesViewModel(
 
     content.add(PokeTypeHeaderModel(mSelectedType))
 
-    loadResult?.results?.forEach {
-      content.add(PokeCardModel.fromPokemon(it))
-    }
+    // TODO SHOW POKEMON TABLE
 
     _contentData.postValue(content)
   }
@@ -119,7 +116,8 @@ class TypesViewModel(
         }
         result.onSuccess {
           _loading.postValue(false)
-
+          pokemonData.clear()
+          pokemonData.addAll(it)
           setupView()
         }
       }
