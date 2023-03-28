@@ -72,8 +72,8 @@ android {
     kotlinOptions {
       jvmTarget = "11"
       freeCompilerArgs = freeCompilerArgs + "-Xallow-jvm-ir-dependencies"
-      freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
-      freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.FlowPreview"
+      freeCompilerArgs = freeCompilerArgs + "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+      freeCompilerArgs = freeCompilerArgs + "-opt-in=kotlinx.coroutines.FlowPreview"
     }
   }
 

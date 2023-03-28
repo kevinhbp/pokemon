@@ -225,21 +225,21 @@ object AppDependencies {
 
   val androidTestLibraries = arrayListOf<String>().apply {
     add(extJUnit)
-    add(espressoCore)
+    /*add(espressoCore)
     add(archCoreTesting)
     add(espressoContrib)
     add(espressoIntent)
-    add(truth)
+    add(truth)*/
     add(koinTest)
   }
 
   val testLibraries = arrayListOf<String>().apply {
     add(junit)
     add(coroutineTest)
-    add(turbine)
+    /*add(turbine)
     add(mockk)
     add(truth)
-    add(archCoreTesting)
+    add(archCoreTesting)*/
   }
 
   val firebasePlatformLibraries = arrayListOf<String>().apply {
