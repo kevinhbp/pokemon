@@ -78,9 +78,14 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
   }
 
   @Suppress("unused")
-  protected fun navigateTo(mUri: Uri) {
+  protected fun navigateTo(mUri: Uri, lv: Int = 1) {
     try {
-      findNavController().navigate(mUri, ViewSingleton.getDefaultInstance().navOptions)
+      val navOptions = if (lv == 0) {
+        ViewSingleton.getDefaultInstance().navOptionsLv0
+      } else {
+        ViewSingleton.getDefaultInstance().navOptionsLv1
+      }
+      findNavController().navigate(mUri, navOptions)
     } catch (e: Exception) {
       Log.d(LOG_TAG, e.message.withDefault())
       requireActivity().showToastError("Destination is not found.", Toast.LENGTH_LONG)

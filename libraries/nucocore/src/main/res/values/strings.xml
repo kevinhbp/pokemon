@@ -31,4 +31,7 @@
   <string name="height_dd" translatable="false">Height:</string>
   <string name="abilities_dd" translatable="false">Abilities:</string>
   <string name="type_dd" translatable="false">Type:</string>
+
+  <string name="pokemon_not_selected_title">Pokémon not yet selected</string>
+  <string name="pokemon_not_selected_message">Select a pokémon first to load this page</string>
 </resources>

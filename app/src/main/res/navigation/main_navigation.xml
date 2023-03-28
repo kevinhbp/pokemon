@@ -23,9 +23,9 @@
   </fragment>
 
   <fragment
-    android:id="@+id/profile_fragment"
+    android:id="@+id/detail_fragment"
     android:name="id.co.app.detail.ui.DetailFragment"
-    android:label="profile"
+    android:label="detail"
     tools:layout="@layout/fragment_detail">
     <deepLink app:uri="nuco://detail" />
   </fragment>

@@ -21,8 +21,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import id.co.app.nucocore.R
 import id.co.app.nucocore.singleton.LOG_TAG
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlin.time.Duration
 
 fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
 
@@ -169,4 +172,16 @@ fun RecyclerView.initItemVisibleListenerLinearLayout(
       super.onScrolled(recyclerView, dx, dy)
     }
   })
+}
+
+private val scope = MainScope()
+private var job1: Job? = null
+
+fun debouncer1(delay: Long, function: () -> Unit) {
+  job1?.cancel()
+  job1 = scope.launch {
+    delay(delay)
+    function.invoke()
+    job1 = null
+  }
 }

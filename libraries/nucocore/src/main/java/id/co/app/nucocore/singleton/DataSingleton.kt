@@ -1,5 +1,6 @@
 package id.co.app.nucocore.singleton
 
+import id.co.app.nucocore.domain.entities.pokemon.Pokemon
 import id.co.app.nucocore.domain.network.EnvironmentCode
 
 class DataSingleton {
@@ -15,7 +16,7 @@ class DataSingleton {
     }
   }
 
-  val useMockStorage: Boolean = false
+  var selectedPokemon: Pokemon? = null
 
   var currentEnvironmentCode: EnvironmentCode = EnvironmentCode.PRODUCTION
 }

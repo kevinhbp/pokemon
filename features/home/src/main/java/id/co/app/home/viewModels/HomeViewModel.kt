@@ -18,6 +18,7 @@ import id.co.app.nucocore.extension.onFailure
 import id.co.app.nucocore.extension.onLoading
 import id.co.app.nucocore.extension.onSuccess
 import id.co.app.nucocore.extension.toDp
+import id.co.app.nucocore.singleton.DataSingleton
 import id.co.app.nucocore.singleton.LOG_TAG
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -86,6 +87,8 @@ class HomeViewModel(private val mainRepository: MainRepository) : ViewModel() {
   }
 
   fun setPokemon(pokemon: Pokemon) {
+    DataSingleton.getDefaultInstance().selectedPokemon = pokemon
+
     val content = ArrayList<DelegateAdapterItem>()
     content.add(PokeInfo1Model.fromPokemon(pokemon))
     _contentDataDetail.postValue(content)

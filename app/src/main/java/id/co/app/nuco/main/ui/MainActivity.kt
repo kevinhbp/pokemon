@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity(), MainActNavi {
 
   private var menuShowing: Boolean = false
   private var animatingMenu: Boolean = false
+  private var actionBarShowing: Boolean = true
+  private var animatingActionBar: Boolean = false
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -96,10 +98,9 @@ class MainActivity : AppCompatActivity(), MainActNavi {
 
   private fun onDestinationDefault(): Boolean {
     val nav = getNavController()
-    val preventSingleTouchExitFragments = arrayListOf<Int>().apply {
-      add(id.splash_fragment)
-      add(id.home_fragment)
-    }
+    val preventSingleTouchExitFragments = listOf(
+      id.splash_fragment
+    )
     val destinationId = nav.currentBackStackEntry?.destination?.id ?: -1
     return preventSingleTouchExitFragments.contains(destinationId)
   }
@@ -113,7 +114,9 @@ class MainActivity : AppCompatActivity(), MainActNavi {
 
   private fun onOverrideBackPressedPage(): Boolean {
     val nav = getNavController()
-    val fragmentList = listOf<Int>()
+    val fragmentList = listOf(
+      id.home_fragment,
+    )
     val destinationId = nav.currentBackStackEntry?.destination?.id ?: -1
     return fragmentList.contains(destinationId)
   }
@@ -156,7 +159,36 @@ class MainActivity : AppCompatActivity(), MainActNavi {
   // --
   override fun showActionBar(show: Boolean) {
     val view = binding.actionBarView.abDefault
-    view.visibility = if (show) View.VISIBLE else View.GONE
+    if (actionBarShowing == show) return
+    if (animatingActionBar) return
+    animatingActionBar = true
+    actionBarShowing = show
+    if (show) {
+      view.visibility = View.VISIBLE
+      view.translationY = -200f
+    }
+
+    val valueAnimator = ValueAnimator.ofInt(0, 100)
+    valueAnimator.duration = 200
+    valueAnimator.addUpdateListener {
+      val animatedValue = it.animatedValue as Int
+      val animatedPercentage = if (show) {
+        animatedValue.toFloat() / 100f
+      } else {
+        (100f - animatedValue.toFloat()) / 100f
+      }
+      view.alpha = animatedPercentage
+
+      val animatedTranslate = -200f + (200f * animatedPercentage)
+      view.translationY = animatedTranslate
+    }
+    valueAnimator.doOnEnd {
+      animatingActionBar = false
+      if (!show) {
+        view.visibility = View.GONE
+      }
+    }
+    valueAnimator.start()
   }
 
   override fun showBlockerView(model: BlockerDefaultModel) {
@@ -170,7 +202,7 @@ class MainActivity : AppCompatActivity(), MainActNavi {
     }
 
     try {
-      getNavController().navigate(it.toUri(), ViewSingleton.getDefaultInstance().navOptions)
+      getNavController().navigate(it.toUri(), ViewSingleton.getDefaultInstance().navOptionsLv1)
     } catch (e: Exception) {
       e.printStackTrace()
     }

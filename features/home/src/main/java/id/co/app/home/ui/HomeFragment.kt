@@ -3,10 +3,14 @@ package id.co.app.home.ui
 import android.annotation.SuppressLint
 import android.view.MotionEvent
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.net.toUri
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.gson.Gson
 import id.co.app.home.databinding.FragmentHomeBinding
 import id.co.app.home.viewModels.HomeViewModel
 import id.co.app.nucocore.R
@@ -19,10 +23,14 @@ import id.co.app.nucocore.base.BaseFragment
 import id.co.app.nucocore.base.RecyclerViewPagination
 import id.co.app.nucocore.base.adapterdelegate.CompositeAdapter
 import id.co.app.nucocore.components.dialog.showLoadingDialog
+import id.co.app.nucocore.deeplink.InternalDeepLink
 import id.co.app.nucocore.extension.applyDefaultColor
+import id.co.app.nucocore.extension.debouncer1
 import id.co.app.nucocore.extension.initItemVisibleListenerLinearLayout
 import id.co.app.nucocore.extension.toDp
 import id.co.app.nucocore.navigation.MainActNavi
+import id.co.app.nucocore.singleton.DataSingleton
+import kotlinx.coroutines.delay
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -36,6 +44,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
       .add(PokeHeaderAdapter())
       .add(PokeCardAdapter {
         homeViewModel.setPokemon(it)
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
       })
       .build()
   }
@@ -58,12 +67,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
   }
 
   override fun setupView() {
+    (requireActivity() as MainActNavi).showActionBar(true)
     binding.viewModel = homeViewModel
     homeViewModel.topSpace =
       requireActivity().resources.getDimension(R.dimen.action_bar_height).toInt()
     setupRecyclerView()
     setupBottomSheet()
     setupRecyclerViewDetail()
+    setupBackPressedEvent()
   }
 
   override fun observeViewModel() {
@@ -80,7 +91,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     // Detail
     homeViewModel.contentDataDetail.observe(viewLifecycleOwner) {
       mAdapterDetail.submitList(it)
-      bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
     }
   }
 
@@ -120,6 +130,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         onBottomSheetStateChanged(newState)
       }
     })
+
+    val moreDetailButton = binding.pokemonOverview.buttonMoreDetail
+    moreDetailButton.setOnClickListener {
+      if (DataSingleton.getDefaultInstance().selectedPokemon != null) {
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        debouncer1(130) {
+          navigateTo(InternalDeepLink.DETAIL.toUri())
+        }
+      }
+    }
   }
 
   @SuppressLint("ClickableViewAccessibility")
@@ -153,5 +173,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
       setStatusColor(true)
     }
     bottomSheetState = newState
+  }
+
+  private fun isBottomSheetExpanded(): Boolean = bottomSheetState == BottomSheetBehavior.STATE_EXPANDED
+
+  private fun setupBackPressedEvent() {
+    requireActivity()
+      .onBackPressedDispatcher
+      .addCallback(this, object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+          if (isBottomSheetExpanded()) {
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+            return
+          }
+          findNavController().navigateUp()
+        }
+      })
   }
 }

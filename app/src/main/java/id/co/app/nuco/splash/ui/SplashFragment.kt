@@ -6,6 +6,7 @@ import id.co.app.nuco.main.ui.MainActivity
 import id.co.app.nuco.splash.viewModels.SplashViewModel
 import id.co.app.nucocore.base.BaseFragment
 import id.co.app.nucocore.deeplink.InternalDeepLink
+import id.co.app.nucocore.navigation.MainActNavi
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SplashFragment : BaseFragment<FragmentSplashBinding>() {
@@ -18,6 +19,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
   }
 
   override fun setupView() {
+    (requireActivity() as MainActNavi).showActionBar(true)
     setStatusColor(true)
     setupButton()
   }
@@ -35,7 +37,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
   // --
   private fun setupButton() {
     binding.buttonPokedex.setOnClickListener {
-      navigateTo(InternalDeepLink.HOME.toUri())
+      navigateTo(InternalDeepLink.HOME.toUri(), 0)
     }
   }
 }

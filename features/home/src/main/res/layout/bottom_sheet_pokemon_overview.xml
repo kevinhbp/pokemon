@@ -95,7 +95,7 @@
                     app:layout_constraintStart_toStartOf="parent">
 
                     <TextView
-                        android:id="@+id/button_action"
+                        android:id="@+id/button_more_detail"
                         style="@style/Button.Tertiary"
                         android:layout_width="match_parent"
                         android:text="@string/more_detail" />
