@@ -19,6 +19,20 @@ fun String.formatName(): String {
   return result.toString()
 }
 
+fun String.formatStatName(): String {
+  if (this.isEmpty()) return ""
+  if (!this.contains('-')) {
+    return this.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+  }
+  val names = this.split('-')
+  val result = StringBuffer()
+  for (mName in names) {
+    result.append(mName.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() })
+    result.append(' ')
+  }
+  return result.toString()
+}
+
 fun Int.formatId(): String {
   return this.toString().padStart(3, '0')
 }

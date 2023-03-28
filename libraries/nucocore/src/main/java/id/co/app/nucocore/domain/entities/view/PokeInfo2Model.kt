@@ -55,7 +55,8 @@ data class PokeInfo2Model(
         otherImages.add(sprites.backFemale)
       }
 
-      val stats = listOf<PokeStat>()
+      val stats = pokemon.stats
+
       val evolution = listOf<String>()
       return PokeInfo2Model(id, otherImages, stats, evolution)
     }

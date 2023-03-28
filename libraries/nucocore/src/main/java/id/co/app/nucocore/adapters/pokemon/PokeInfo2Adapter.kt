@@ -14,7 +14,10 @@ import id.co.app.nucocore.binding.ViewBinding
 import id.co.app.nucocore.databinding.ItemPokemonInfo1Binding
 import id.co.app.nucocore.databinding.ItemPokemonInfo2Binding
 import id.co.app.nucocore.domain.entities.view.*
+import id.co.app.nucocore.extension.pokemon.formatName
+import id.co.app.nucocore.extension.pokemon.formatStatName
 import id.co.app.nucocore.extension.pokemon.getPokeSpritesById
+import id.co.app.nucocore.extension.toThousandFormat
 
 class PokeInfo2Adapter : DelegateAdapter<PokeInfo2Model, PokeInfo2Adapter.PokeInfo2ViewHolder>(
   PokeInfo2Model::class.java
@@ -44,8 +47,15 @@ class PokeInfo2Adapter : DelegateAdapter<PokeInfo2Model, PokeInfo2Adapter.PokeIn
         .build()
     }
 
+    private val mAdapterStat by lazy {
+      CompositeAdapter.Builder()
+        .add(PokeStatAdapter())
+        .build()
+    }
+
     override fun bind(data: PokeInfo2Model) {
       val context = binding.root.context
+
       /// --- SPRITES
       val rvSprites = binding.rvOtherImages
       val mLayoutManagerSprites = GridLayoutManager(context, 2)
@@ -59,7 +69,20 @@ class PokeInfo2Adapter : DelegateAdapter<PokeInfo2Model, PokeInfo2Adapter.PokeIn
       }
       mAdapterSprites.submitList(spritesData.toMutableList())
 
-      /// ---
+      /// --- STAT
+      val rvStat = binding.rvStats
+      val mLayoutManagerStat = GridLayoutManager(context, 3)
+      rvStat.apply {
+        adapter = mAdapterStat
+        layoutManager = mLayoutManagerStat
+      }
+      val statData = arrayListOf<DelegateAdapterItem>()
+      data.stats.forEach { stat ->
+        val name = stat.stat.name.formatStatName()
+        val value = stat.baseStat.toThousandFormat()
+        statData.add(PokeStatModel(name, value))
+      }
+      mAdapterStat.submitList(statData.toMutableList())
     }
   }
 
