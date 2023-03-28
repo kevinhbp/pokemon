@@ -25,4 +25,6 @@
   <string name="pokemon_not_selected_title">Pokémon belum terpilih</string>
   <string name="pokemon_not_selected_message">Pilih pokémon terlebih dahulu untuk memuat halaman ini</string>
 
+  <string name="pokemon_with_type">Menampilkan pokémon dengan tipe %1$s</string>
+
 </resources>

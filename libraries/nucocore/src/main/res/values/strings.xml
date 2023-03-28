@@ -37,4 +37,5 @@
 
   <string name="pokemon_not_selected_title">Pokémon not yet selected</string>
   <string name="pokemon_not_selected_message">Select a pokémon first to load this page</string>
+  <string name="pokemon_with_type">Showing pokémon with type %1$s</string>
 </resources>

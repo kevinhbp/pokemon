@@ -38,7 +38,8 @@ class TypesViewModel(
   private val _loading = MutableLiveData(false)
   val loading: LiveData<Boolean> get() = _loading
 
-  private val _selectedType = MutableLiveData("normal")
+  private var mSelectedType = "normal"
+  private val _selectedType = MutableLiveData(mSelectedType)
   val selectedType: LiveData<String> get() = _selectedType
 
   private var getStringResource: ((id: Int) -> String)? = null
@@ -55,7 +56,10 @@ class TypesViewModel(
   }
 
   fun setSelectedType(newType: String) {
+    mSelectedType = newType
     _selectedType.postValue(newType)
+
+    setupView()
   }
 
   private fun setupView() {
@@ -70,6 +74,8 @@ class TypesViewModel(
 
     val typeList = typeData.map { e -> e.name }
     content.add(PokeTypeButtonModel(1, typeList))
+
+    content.add(PokeTypeHeaderModel(mSelectedType))
 
     // TODO SHOW POKEMON BY TYPE
 

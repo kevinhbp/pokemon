@@ -12,6 +12,7 @@ import id.co.app.types.databinding.FragmentTypesBinding
 import id.co.app.types.viewModels.TypesViewModel
 import id.co.app.nucocore.adapters.DefaultEmptyStateAdapter
 import id.co.app.nucocore.adapters.pokemon.PokeTypeButtonAdapter
+import id.co.app.nucocore.adapters.pokemon.PokeTypeHeaderAdapter
 import id.co.app.nucocore.base.adapterdelegate.adapter.LoadingAdapter
 import id.co.app.nucocore.components.dialog.showLoadingDialog
 import id.co.app.nucocore.extension.pokemon.ColorPokemonBg
@@ -27,6 +28,7 @@ class TypesFragment : BaseFragment<FragmentTypesBinding>() {
       .add(SpaceAdapter())
       .add(DefaultEmptyStateAdapter { })
       .add(LoadingAdapter())
+      .add(PokeTypeHeaderAdapter())
       .add(PokeTypeButtonAdapter {
         typesViewModel.setSelectedType(it)
       })

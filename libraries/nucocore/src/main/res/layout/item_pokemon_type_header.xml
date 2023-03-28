@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_title"
+            style="@style/Headline.Hero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_top_menu_shadow"
+            android:paddingHorizontal="@dimen/content_horizontal_lv2"
+            android:paddingVertical="@dimen/space_x2"
+            android:gravity="center"
+            android:text="@string/pokemon_with_type"
+            android:textColor="@color/color_on_background" />
+
+    </FrameLayout>
+
+</layout>
