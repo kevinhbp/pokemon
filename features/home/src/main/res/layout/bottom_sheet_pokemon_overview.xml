@@ -6,7 +6,8 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:background="@color/nuco_light_blue_1">
+        tools:background="@color/nuco_light_blue_1"
+        tools:visibility="gone">
 
         <View
             android:id="@+id/view_shadow"

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+
+  <color name="ripple_active">#44B071EF</color>
+  <color name="ripple_default">#44B0B0B0</color>
+  <color name="ripple_light">#44FFFFFF</color>
+
+  <color name="primary_destructive">@color/nuco_red_2</color>
+  <color name="primary_destructive_pressed">@color/nuco_red_1</color>
+  <color name="primary_destructive_color_on">@color/nuco_white</color>
+
+  <color name="secondary_active">@color/nuco_white</color>
+  <color name="secondary_active_color_on">@color/nuco_purple_1</color>
+  <color name="secondary_active_color_on_pressed">@color/nuco_purple_2</color>
+  <color name="secondary_disabled">@color/nuco_white</color>
+  <color name="secondary_disabled_color_on">@color/nuco_gray_3</color>
+  <color name="secondary_destructive">@color/nuco_white</color>
+  <color name="secondary_destructive_color_on">@color/nuco_red_2</color>
+  <color name="secondary_destructive_color_on_pressed">@color/nuco_red_1</color>
+
+  <color name="tertiary_active">@color/nuco_purple_5</color>
+  <color name="tertiary_active_pressed">@color/nuco_purple_4</color>
+  <color name="tertiary_active_color_on">@color/nuco_purple_1</color>
+  <color name="tertiary_disabled">@color/nuco_gray_5</color>
+  <color name="tertiary_disabled_color_on">@color/nuco_gray_3</color>
+  <color name="tertiary_destructive">@color/nuco_red_5</color>
+  <color name="tertiary_destructive_pressed">@color/nuco_red_4</color>
+  <color name="tertiary_destructive_color_on">@color/nuco_red_2</color>
+
+  <!-- region TEXT COLOR -->
+  <color name="color_text_white_0">@color/nuco_white</color>
+  <color name="color_text_white_1">@color/nuco_gray_7</color>
+  <color name="color_text_white_2">@color/nuco_gray_6</color>
+
+  <color name="color_text_black_0">@color/nuco_black</color>
+  <color name="color_text_black_1">@color/nuco_gray_1</color>
+
+  <color name="color_text_gray_0">@color/nuco_gray_2</color>
+  <color name="color_text_gray_1">@color/nuco_gray_3</color>
+  <color name="color_text_gray_2">@color/nuco_gray_8</color>
+
+  <color name="color_text_primary">@color/nuco_purple_1</color>
+
+  <color name="color_text_navy_0">@color/nuco_navy_blue_1</color>
+
+  <color name="color_text_purple_0">@color/nuco_purple_3_dark</color>
+  <color name="color_text_purple_1">@color/nuco_purple_3_light</color>
+
+  <color name="color_text_green_0">@color/nuco_green_1</color>
+  <color name="color_text_green_1">@color/nuco_green_2</color>
+
+  <color name="color_text_red_0">@color/nuco_red_2</color>
+  <color name="color_text_red_1">@color/nuco_red_1</color>
+
+  <color name="color_text_yellow_0">@color/nuco_yellow_2</color>
+  <color name="color_text_yellow_1">@color/nuco_orange_0</color>
+
+  <!-- endregion -->
+
+  <color name="color_bottom_nav_bar">@color/nuco_purple_1</color>
+
+  <color name="color_feature_0">@color/nuco_orange_0</color>
+  <color name="color_feature_1">@color/nuco_green_3</color>
+  <color name="color_feature_2">@color/nuco_red_2</color>
+  <color name="color_feature_3">@color/nuco_yellow_1</color>
+  <color name="color_feature_4">@color/nuco_green_1</color>
+  <color name="color_feature_5">@color/nuco_purple_2</color>
+
+  <color name="color_area_cg">@color/nuco_purple_1</color>
+  <color name="color_area_ra">@color/nuco_orange_0</color>
+  <color name="color_area_oa">@color/nuco_purple_4</color>
+  <color name="color_area_sa">@color/nuco_yellow_2</color>
+  <color name="color_area_ha">@color/nuco_green_2</color>
+
+  <color name="color_tabs_wrapper">@color/nuco_purple_6</color>
+  <color name="color_tabs">@color/nuco_purple_7</color>
+  <color name="color_on_tabs_default">@color/nuco_purple_3_dark</color>
+  <color name="color_on_tabs_active">@color/nuco_purple_3_light</color>
+
+  <color name="color_switch_wrapper">@color/nuco_gray_4</color>
+  <color name="color_switch">@color/nuco_purple_1</color>
+  <color name="color_on_switch_default">@color/nuco_gray_1</color>
+  <color name="color_on_switch_active">@color/nuco_white</color>
+</resources>

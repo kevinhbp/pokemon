@@ -3,7 +3,7 @@
 
   <!-- Level 0 : Non Use-able -->
   <style name="Typography">
-    <item name="android:textColor">@color/color_text_black_1</item>
+    <item name="android:textColor">@color/color_on_surface</item>
     <item name="android:textSize">@dimen/text_body_moderate</item>
     <item name="android:fontFamily">@font/maisonneue_ext_book</item>
     <item name="android:includeFontPadding">true</item>

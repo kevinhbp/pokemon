@@ -129,7 +129,7 @@
           android:layout_width="@dimen/icon_large"
           android:layout_height="@dimen/icon_large"
           android:layout_gravity="center"
-          android:tint="@color/nuco_gray_3"
+          android:tint="@color/color_accent"
           app:srcCompat="@drawable/ic_menu" />
 
       </FrameLayout>

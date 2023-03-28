@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_dialog_default"
     android:orientation="horizontal"
     tools:layout_margin="@dimen/space_x4">
 

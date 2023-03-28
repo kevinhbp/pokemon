@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <color name="color_primary">@color/nuco_purple_blue_1</color>
+    <color name="color_primary_variant">@color/nuco_purple_blue_2</color>
+    <color name="color_on_primary">@color/color_text_black_1</color>
+
+    <color name="color_secondary">@color/nuco_purple_3_light</color>
+    <color name="color_secondary_variant">@color/nuco_purple_4</color>
+    <color name="color_on_secondary">@color/color_text_black_1</color>
+
+    <color name="color_background">@color/nuco_gray_1</color>
+    <color name="color_on_background">@color/color_text_white_0</color>
+    <color name="color_surface">@color/nuco_gray_2</color>
+    <color name="color_on_surface">@color/color_text_white_2</color>
+
+    <color name="color_accent">@color/nuco_gray_8</color>
+
+    <color name="color_error">@color/nuco_red_3</color>
+    <color name="color_on_error">@color/color_text_black_1</color>
+
+
+    <!-- region BUTTON COLOR -->
+    <color name="primary_active">@color/color_primary</color>
+    <color name="primary_active_pressed">@color/color_primary_variant</color>
+    <color name="primary_active_color_on">@color/color_text_white_2</color>
+
+    <color name="primary_disabled">@color/nuco_gray_2</color>
+    <color name="primary_disabled_color_on">@color/color_text_white_2</color>
+    <!-- endregion -->
+
+    <color name="card_color">@color/color_surface</color>
+</resources>

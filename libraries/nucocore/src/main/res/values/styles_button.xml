@@ -18,7 +18,7 @@
   </style>
 
   <style name="Button.Primary" parent="Button">
-    <item name="android:textColor">@color/color_text_button_primary</item>
+    <item name="android:textColor">@color/primary_active_color_on</item>
     <item name="android:background">@drawable/bg_button_primary</item>
   </style>
 
