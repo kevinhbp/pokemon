@@ -68,6 +68,6 @@ class MainApplication : MultiDexApplication() {
 
     viewModel { HomeViewModel(get()) }
 
-    viewModel { DetailViewModel(get()) }
+    viewModel { DetailViewModel(get(), get()) }
   }
 }

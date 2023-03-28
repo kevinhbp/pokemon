@@ -11,6 +11,8 @@ import id.co.app.detail.viewModels.DetailViewModel
 import id.co.app.nucocore.adapters.DefaultEmptyStateAdapter
 import id.co.app.nucocore.adapters.pokemon.PokeInfo1Adapter
 import id.co.app.nucocore.adapters.pokemon.PokeInfo2Adapter
+import id.co.app.nucocore.adapters.pokemon.PokeInfo3Adapter
+import id.co.app.nucocore.base.adapterdelegate.adapter.LoadingAdapter
 import id.co.app.nucocore.navigation.MainActNavi
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -22,8 +24,10 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
     CompositeAdapter.Builder()
       .add(SpaceAdapter())
       .add(DefaultEmptyStateAdapter { })
+      .add(LoadingAdapter())
       .add(PokeInfo1Adapter())
       .add(PokeInfo2Adapter())
+      .add(PokeInfo3Adapter())
       .build()
   }
 

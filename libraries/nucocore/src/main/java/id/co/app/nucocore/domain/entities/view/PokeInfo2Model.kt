@@ -11,7 +11,6 @@ data class PokeInfo2Model(
   var pokeId: Int,
   val otherImages: List<String>,
   val stats: List<PokeStat>,
-  val evolution: List<String>,
 ) : Serializable, DelegateAdapterItem, BaseModel() {
 
   override val id: Any get() = pokeId
@@ -26,7 +25,6 @@ data class PokeInfo2Model(
     var contentString = ""
     otherImages.forEach { contentString += ("$it.") }
     stats.forEach { contentString += "${it.stat.name}." }
-    evolution.forEach { contentString += "$it." }
     return "pokemon_info_2:$pokeId.$contentString"
   }
 
@@ -57,8 +55,7 @@ data class PokeInfo2Model(
 
       val stats = pokemon.stats
 
-      val evolution = listOf<String>()
-      return PokeInfo2Model(id, otherImages, stats, evolution)
+      return PokeInfo2Model(id, otherImages, stats)
     }
   }
 }

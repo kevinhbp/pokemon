@@ -102,6 +102,5 @@
   <dimen name="stats_height_wrapper">180dp</dimen>
   <dimen name="stats_height">80dp</dimen>
 
-  <dimen name="evolution_height_wrapper">200dp</dimen>
   <dimen name="evolution_height">92dp</dimen>
 </resources>

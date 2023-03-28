@@ -3,6 +3,7 @@ package id.co.app.detail.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import id.co.app.nucocore.base.adapterdelegate.DelegateAdapterItem
 import id.co.app.nucocore.domain.entities.pokemon.Pokemon
 import id.co.app.nucocore.domain.entities.row.DefaultEmptyStateModel
@@ -11,15 +12,25 @@ import id.co.app.session.UserSession
 import id.co.app.nucocore.R.drawable
 import id.co.app.nucocore.R.dimen
 import id.co.app.nucocore.R.string
+import id.co.app.nucocore.base.adapterdelegate.adapter.model.LoadingModel
 import id.co.app.nucocore.deeplink.InternalDeepLink
+import id.co.app.nucocore.domain.entities.pokemon.PokemonEvolution
 import id.co.app.nucocore.domain.entities.row.SpaceModel
 import id.co.app.nucocore.domain.entities.view.ActionButtonModel
 import id.co.app.nucocore.domain.entities.view.PokeInfo1Model
 import id.co.app.nucocore.domain.entities.view.PokeInfo2Model
+import id.co.app.nucocore.domain.entities.view.PokeInfo3Model
+import id.co.app.nucocore.domain.repository.MainRepository
+import id.co.app.nucocore.extension.onFailure
+import id.co.app.nucocore.extension.onSuccess
 import id.co.app.nucocore.extension.toDp
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class DetailViewModel(
   private val userSession: UserSession,
+  private val mainRepository: MainRepository,
 ) : ViewModel() {
 
   private val _contentData = MutableLiveData<MutableList<DelegateAdapterItem>>()
@@ -32,6 +43,10 @@ class DetailViewModel(
     getStringResource = stringCallback
     getDimenResource = dimenCallback
     val pokemon = DataSingleton.getDefaultInstance().selectedPokemon
+    generateContent(pokemon)
+  }
+
+  private fun generateContent(pokemon: Pokemon?) {
     if (pokemon == null) {
       loadEmptyData()
       return
@@ -43,8 +58,10 @@ class DetailViewModel(
     val content = ArrayList<DelegateAdapterItem>()
     val errCode = "pokemon-empty"
     val illustration = drawable.illustration_data_sync_required
-    val title = getStringResource?.invoke(string.pokemon_not_selected_title) ?: "Pokemon is not selected"
-    val message = getStringResource?.invoke(string.pokemon_not_selected_message) ?: "Select pokemon first to show this page"
+    val title =
+      getStringResource?.invoke(string.pokemon_not_selected_title) ?: "Pokemon is not selected"
+    val message = getStringResource?.invoke(string.pokemon_not_selected_message)
+      ?: "Select pokemon first to show this page"
     val buttonLabel = getStringResource?.invoke(string.dismiss) ?: "Dismiss"
     val button = ActionButtonModel(1, buttonLabel, InternalDeepLink.EXIT)
     content.add(DefaultEmptyStateModel(errCode, illustration, title, message, button))
@@ -61,7 +78,15 @@ class DetailViewModel(
     content.add(PokeInfo1Model.fromPokemon(data))
     content.add(PokeInfo2Model.fromPokemon(data))
 
+    /*if (evolutionData == null) {
+      content.add(LoadingModel(LoadingModel.Type.HORIZONTAL_SHIMMER))
+    } else if (evolutionData!!.isNotEmpty()) {
+      content.add(PokeInfo3Model(data.id, evolutionData!!.toList()))
+    }*/
+
     _contentData.postValue(content)
 
   }
+
+
 }
