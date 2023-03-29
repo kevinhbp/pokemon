@@ -13,6 +13,9 @@ interface PokemonDao {
   fun insertDataList(dataList: List<Pokemon>)
 
   @Query("SELECT * FROM pokemon")
-  fun getHptList(): List<Pokemon>
+  fun getPokemonList(): List<Pokemon>
+
+  @Query("SELECT * FROM pokemon LIMIT :limit OFFSET :offset")
+  fun getPokemonList(offset: Int, limit: Int): List<Pokemon>
 
 }

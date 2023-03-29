@@ -70,11 +70,11 @@ object InjectionModule {
   // --
   val repositoryModule = module {
 
-    fun getMainRepository(client: MainClient, mockStorage: MainMockStorage): MainRepository {
-      return MainRepository(client, mockStorage)
+    fun getMainRepository(client: MainClient, pokemonDao: PokemonDao, mockStorage: MainMockStorage): MainRepository {
+      return MainRepository(client, pokemonDao, mockStorage)
     }
 
-    single { getMainRepository(get(), get()) }
+    single { getMainRepository(get(), get(), get()) }
   }
 
   // --

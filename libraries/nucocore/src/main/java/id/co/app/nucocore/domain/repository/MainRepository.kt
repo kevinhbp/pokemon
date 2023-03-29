@@ -4,12 +4,14 @@ import id.co.app.nucocore.base.Result
 import id.co.app.nucocore.domain.entities.pokemon.*
 import id.co.app.nucocore.domain.mock.main.MainMockStorage
 import id.co.app.nucocore.domain.network.nuco.MainClient
+import id.co.app.nucocore.domain.persistence.PokemonDao
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 @Suppress("MemberVisibilityCanBePrivate", "unused")
 class MainRepository(
   private val mainClient: MainClient,
+  private val pokemonDao: PokemonDao,
   private val mockStorage: MainMockStorage
 ) {
 
